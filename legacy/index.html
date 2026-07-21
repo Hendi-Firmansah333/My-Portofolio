@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Hendi Firmansah | Frontend Developer Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary selection:text-white">
+    
+    <div class="mesh-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+        <nav class="fixed top-0 w-full z-50 glass-nav">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer group">
+                        <div class="bg-primary/20 p-2 rounded-lg group-hover:bg-primary/30 transition-colors">
+                            <span class="material-symbols-outlined text-primary">code</span>
+                        </div>
+                        <span class="font-extrabold text-xl tracking-tight text-white">Hendi<span class="text-primary">.dev</span></span>
+                    </div>
+                    
+                    <div class="hidden lg:flex items-center gap-6">
+                        <a class="nav-link" href="#work">Selected Works</a>
+                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="#skills">Skills</a>
+                        <a class="nav-link" href="#experience">Experience</a>
+                        <a class="nav-link" href="#certificate">Certificate</a>
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </div>
+                    
+                    <div class="flex items-center gap-4">
+                        <button class="hidden sm:block bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-[0_0_20px_rgba(19,91,236,0.5)] transition-all">Hire Me</button>
+                        
+                        <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-300 hover:text-white transition-colors focus:outline-none">
+                            <span class="material-symbols-outlined text-3xl">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-[#101622]/95 backdrop-blur-xl border-b border-white/10 lg:hidden shadow-2xl transition-all duration-300 ease-in-out">
+                <div class="flex flex-col px-6 py-8 gap-6 text-center">
+                    <a class="mobile-link text-lg font-medium text-slate-300 hover:text-primary transition-colors" href="#work">Selected Works</a>
+                    <a class="mobile-link text-lg font-medium text-slate-300 hover:text-primary transition-colors" href="#about">About</a>
+                    <a class="mobile-link text-lg font-medium text-slate-300 hover:text-primary transition-colors" href="#skills">Skills</a>
+                    <a class="mobile-link text-lg font-medium text-slate-300 hover:text-primary transition-colors" href="#experience">Experience</a>
+                    <a class="mobile-link text-lg font-medium text-slate-300 hover:text-primary transition-colors" href="#certificate">Certificate</a>
+                    <a class="mobile-link text-lg font-medium text-slate-300 hover:text-primary transition-colors" href="#contact">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <section class="relative min-h-screen flex items-center justify-center px-6 overflow-hidden pt-20">
+            <div class="hero-glow"></div>
+
+            <div class="max-w-5xl mx-auto text-center relative z-10">
+                
+                <div class="fade-in-up delay-100 inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 border border-white/10 hover:border-primary/50 transition-colors duration-300 cursor-default">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                    </span>
+                    <span class="text-sm font-medium text-slate-200">Open for Freelance & Projects</span>
+                </div>
+
+                <h1 class="fade-in-up delay-200 text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.1] mb-8">
+                    Building Digital <br/>
+                    <span class="animate-text-shimmer">Experiences.</span>
+                </h1>
+
+                <p class="fade-in-up delay-300 text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                    Hi, I'm <strong class="text-white">Hendi Firmansah</strong>. 
+                    A Frontend Developer focused on creating <span class="text-slate-200 decoration-primary/50 underline decoration-2 underline-offset-4">pixel-perfect</span>, accessible, and cinematic web interfaces.
+                </p>
+
+                <div class="fade-in-up delay-400 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    
+                    <a class="group relative w-full sm:w-auto px-8 py-4 rounded-full bg-primary text-white font-bold text-lg shadow-[0_0_20px_rgba(19,91,236,0.3)] hover:shadow-[0_0_30px_rgba(19,91,236,0.6)] hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 overflow-hidden" href="#work">
+                        <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                        <span class="relative">View Selected Works</span>
+                        <span class="relative material-symbols-outlined text-[20px] group-hover:translate-y-1 transition-transform">arrow_downward</span>
+                    </a>
+
+                    <a class="w-full sm:w-auto px-8 py-4 rounded-full glass-card border border-white/10 text-white font-medium text-lg hover:bg-white/5 hover:border-white/20 transition-all flex items-center justify-center gap-2" href="#contact">
+                        Contact Me
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-24 relative z-10" id="about">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="glass-card rounded-[2.5rem] p-1 md:p-2">
+                    <div class="bg-background-dark/40 rounded-[2.2rem] p-8 md:p-16 flex flex-col lg:flex-row gap-12 items-center">
+                        <div class="lg:w-1/3 relative group">
+                            <div class="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="relative aspect-square w-full max-w-[320px] mx-auto rounded-3xl overflow-hidden border border-white/10 bg-slate-800">
+                                <img alt="Hendi Firmansah" class="w-full h-full object-cover hover:scale-105 transition-all duration-700" src="img/person.png">
+                            </div>
+                        </div>
+                        <div class="lg:w-2/3">
+                            <h2 class="text-4xl md:text-5xl font-bold mb-6 flex items-center gap-4">
+                                About Me
+                            </h2>
+                            <div class="space-y-6 text-slate-300 text-lg leading-relaxed">
+                                <p>
+                                    Hello! I'm Hendi Firmansah, a passionate <strong>Frontend Developer</strong> based in Indonesia. I specialize in building responsive web applications with a focus on clean design and interactivity.
+                                </p>
+                                <p>
+                                    My expertise lies in the <strong>Laravel</strong> ecosystem, combined with modern frontend technologies like <strong>Tailwind CSS</strong> and JavaScript. I also have a growing interest in AI integration and mobile development with Dart.
+                                </p>
+                            </div>
+                            <div class="mt-10 grid grid-cols-2 gap-6">
+                                <div>
+                                    <p class="text-3xl font-bold text-white">5+</p>
+                                    <p class="text-sm text-slate-500 uppercase tracking-widest">Projects Completed</p>
+                                </div>
+                                <div>
+                                    <p class="text-3xl font-bold text-white">3+</p>
+                                    <p class="text-sm text-slate-500 uppercase tracking-widest">Years Learning</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 relative z-10" id="skills">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
+                    <p class="text-slate-400">My coding stack and tools.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="glass-card p-8 rounded-3xl group hover:border-primary/50 transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-orange-500">html</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Frontend</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between text-sm"><span class="text-slate-400">HTML / CSS / JS</span><span class="text-white">90%</span></div>
+                            <div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-orange-500 rounded-full w-[90%]"></div></div>
+                        </div>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl group hover:border-primary/50 transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-blue-500">css</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Styling</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between text-sm"><span class="text-slate-400">Tailwind CSS</span><span class="text-white">85%</span></div>
+                            <div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-blue-500 rounded-full w-[85%]"></div></div>
+                        </div>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl group hover:border-primary/50 transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-red-500">dns</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Backend</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between text-sm"><span class="text-slate-400">Laravel / PHP</span><span class="text-white">80%</span></div>
+                            <div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-red-500 rounded-full w-[80%]"></div></div>
+                        </div>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl group hover:border-primary/50 transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-yellow-500">code</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Others</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between text-sm"><span class="text-slate-400">Python / Dart</span><span class="text-white">70%</span></div>
+                            <div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-yellow-500 rounded-full w-[70%]"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 relative z-10 bg-background-dark/30" id="experience">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Experience</h2>
+                
+                <div class="relative timeline-line ml-4 md:ml-0">
+                    <div class="space-y-16">
+                        
+                        <div class="relative pl-12 md:pl-0">
+                            <div class="md:flex items-start">
+                                <div class="md:w-1/2 md:pr-16 md:text-right hidden md:block">
+                                    <span class="text-sm font-bold text-primary tracking-widest uppercase">2025 — Present</span>
+                                    <h3 class="text-xl font-bold text-white mt-2">Google Student Ambassador</h3>
+                                    <p class="text-slate-500">Google Team</p>
+                                </div>
+                                
+                                <div class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 z-10">
+                                    <div class="w-10 h-10 rounded-xl glass-card flex items-center justify-center shadow-xl shadow-primary/20 group hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-primary text-[20px]">smart_toy</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="md:w-1/2 md:pl-16">
+                                    <div class="md:hidden mb-2">
+                                        <span class="text-xs font-bold text-primary tracking-widest uppercase">2025 — Present</span>
+                                        <h3 class="text-lg font-bold text-white">Google Student Ambassador</h3>
+                                        <p class="text-slate-500 text-sm">Google Team</p>
+                                    </div>
+                                    <div class="glass-card p-6 rounded-2xl border-l-4 border-l-primary/50">
+                                        <p class="text-slate-400 text-sm leading-relaxed">
+                                            Selected as part of the Google Team. Gained in-depth experience and expertise in <strong>Gemini AI</strong> technologies, community leadership, and bridging the gap between students and Google technologies.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative pl-12 md:pl-0">
+                            <div class="md:flex items-start">
+                                <div class="md:w-1/2 md:pr-16 md:text-right hidden md:block">
+                                    <span class="text-sm font-bold text-slate-500 tracking-widest uppercase">2024 (3 Months)</span>
+                                    <h3 class="text-xl font-bold text-white mt-2">Digital Marketing</h3>
+                                    <p class="text-slate-500">Kurnia Properti</p>
+                                </div>
+                                
+                                <div class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 z-10">
+                                    <div class="w-10 h-10 rounded-xl glass-card flex items-center justify-center group hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-purple-400 text-[20px]">campaign</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="md:w-1/2 md:pl-16">
+                                    <div class="md:hidden mb-2">
+                                        <span class="text-xs font-bold text-slate-500 tracking-widest uppercase">2024 (3 Months)</span>
+                                        <h3 class="text-lg font-bold text-white">Digital Marketing</h3>
+                                        <p class="text-slate-500 text-sm">Kurnia Properti</p>
+                                    </div>
+                                    <div class="glass-card p-6 rounded-2xl border-l-4 border-l-purple-500/50">
+                                        <p class="text-slate-400 text-sm leading-relaxed">
+                                            Executed digital marketing strategies focusing on property and land lots (Kavling). Managed social media presence and optimized campaigns to drive sales and brand awareness.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative pl-12 md:pl-0">
+                            <div class="md:flex items-start">
+                                <div class="md:w-1/2 md:pr-16 md:text-right hidden md:block">
+                                    <span class="text-sm font-bold text-slate-500 tracking-widest uppercase">2023 (3 Months)</span>
+                                    <h3 class="text-xl font-bold text-white mt-2">Graphic Designer Intern</h3>
+                                    <p class="text-slate-500">PT Kuy Merchandise</p>
+                                </div>
+                                
+                                <div class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 z-10">
+                                    <div class="w-10 h-10 rounded-xl glass-card flex items-center justify-center group hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-pink-400 text-[20px]">palette</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="md:w-1/2 md:pl-16">
+                                    <div class="md:hidden mb-2">
+                                        <span class="text-xs font-bold text-slate-500 tracking-widest uppercase">2023 (3 Months)</span>
+                                        <h3 class="text-lg font-bold text-white">Graphic Designer Intern</h3>
+                                        <p class="text-slate-500 text-sm">PT Kuy Merchandise</p>
+                                    </div>
+                                    <div class="glass-card p-6 rounded-2xl border-l-4 border-l-pink-500/50">
+                                        <p class="text-slate-400 text-sm leading-relaxed">
+                                            Completed an internship program focused on creative design. Created visual assets for merchandise products and gained hands-on experience in the professional graphic design industry.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 relative z-10" id="certificate">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Certificates & Awards</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <a href="sertifikat-dicoding.html" class="glass-card p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-300 block">
+                        <div class="absolute -right-8 -top-8 w-32 h-32 bg-primary/10 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+                        
+                        <div class="flex items-center justify-between mb-8">
+                            <div class="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 group-hover:border-primary/50 transition-colors">
+                                <span class="material-symbols-outlined text-primary text-4xl">terminal</span>
+                            </div>
+                            <span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">arrow_forward</span>
+                        </div>
+                        
+                        <h3 class="font-bold text-2xl text-white mb-2">Dicoding Academy</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Kompetensi pemrograman web dan pengembangan aplikasi dari Dicoding Indonesia.
+                        </p>
+                        <div class="text-xs font-bold text-primary tracking-wider uppercase">View Collection</div>
+                    </a>
+
+                    <a href="sertifikat-bootcamp.html" class="glass-card p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-300 block">
+                        <div class="absolute -right-8 -top-8 w-32 h-32 bg-purple-500/10 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+                        
+                        <div class="flex items-center justify-between mb-8">
+                            <div class="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 group-hover:border-purple-500/50 transition-colors">
+                                <span class="material-symbols-outlined text-purple-400 text-4xl">rocket_launch</span>
+                            </div>
+                            <span class="material-symbols-outlined text-slate-500 group-hover:text-purple-400 transition-colors">arrow_forward</span>
+                        </div>
+                        
+                        <h3 class="font-bold text-2xl text-white mb-2">Bootcamp</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Sertifikasi intensif dari berbagai program pelatihan dan bootcamp teknologi.
+                        </p>
+                        <div class="text-xs font-bold text-purple-400 tracking-wider uppercase">View Collection</div>
+                    </a>
+
+                    <a href="sertifikat-kegiatan.html" class="glass-card p-8 rounded-3xl relative overflow-hidden group hover:-translate-y-2 transition-all duration-300 block">
+                        <div class="absolute -right-8 -top-8 w-32 h-32 bg-emerald-500/10 rounded-full group-hover:scale-150 transition-transform duration-500"></div>
+                        
+                        <div class="flex items-center justify-between mb-8">
+                            <div class="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 group-hover:border-emerald-500/50 transition-colors">
+                                <span class="material-symbols-outlined text-emerald-400 text-4xl">diversity_3</span>
+                            </div>
+                            <span class="material-symbols-outlined text-slate-500 group-hover:text-emerald-400 transition-colors">arrow_forward</span>
+                        </div>
+                        
+                        <h3 class="font-bold text-2xl text-white mb-2">Kegiatan & Event</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            Partisipasi dalam seminar, workshop, webinar, dan kegiatan komunitas IT.
+                        </p>
+                        <div class="text-xs font-bold text-emerald-400 tracking-wider uppercase">View Collection</div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 relative z-10" id="work">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-3">
+                            <span class="w-8 h-[2px] bg-primary block"></span>
+                            Selected Works
+                        </h2>
+                        <p class="text-slate-400 max-w-md">Recent projects demonstrating my skills.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="group relative rounded-3xl overflow-hidden glass-card transition-all duration-300 hover:-translate-y-2">
+                        <div class="aspect-video w-full overflow-hidden bg-slate-800 flex items-center justify-center">
+                           <span class="material-symbols-outlined text-6xl text-slate-600">restaurant_menu</span>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex gap-2 mb-4">
+                                <span class="px-3 py-1 text-xs font-semibold rounded-full bg-primary/20 text-primary border border-primary/20">E-Commerce</span>
+                                <span class="px-3 py-1 text-xs font-semibold rounded-full bg-white/5 text-slate-300 border border-white/10">Laravel</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Kelanting Food</h3>
+                            <p class="text-slate-400 mb-6 line-clamp-2">A food e-commerce website with branding, product catalog, and footer design.</p>
+                        </div>
+                    </div>
+                     <div class="group relative rounded-3xl overflow-hidden glass-card transition-all duration-300 hover:-translate-y-2">
+                        <div class="aspect-video w-full overflow-hidden bg-slate-800 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-6xl text-slate-600">smart_toy</span>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex gap-2 mb-4">
+                                <span class="px-3 py-1 text-xs font-semibold rounded-full bg-purple-500/20 text-purple-400 border border-purple-500/20">AI Event</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Gemini AI Workshop</h3>
+                            <p class="text-slate-400 mb-6 line-clamp-2">Event organization and digital materials for an AI productivity workshop at Polinela.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 relative z-10" id="contact">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                <div class="glass-card rounded-[2.5rem] p-8 md:p-12 overflow-hidden relative">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[80px] -mr-16 -mt-16 pointer-events-none"></div>
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-5xl font-black mb-4">Let's work together</h2>
+                        <p class="text-slate-400 text-lg">Have a project in mind? Let's turn your ideas into reality.</p>
+                    </div>
+                    <form class="space-y-6 max-w-lg mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Name</label>
+                                <input class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-600" placeholder="Your Name" type="text"/>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Email</label>
+                                <input class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-600" placeholder="email@example.com" type="email"/>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Message</label>
+                            <textarea class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all placeholder:text-slate-600" placeholder="Tell me about your project..." rows="4"></textarea>
+                        </div>
+                        <button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-5 rounded-xl shadow-lg shadow-primary/25 transition-all transform active:scale-[0.98] flex items-center justify-center gap-2" type="button">
+                            Send Message <span class="material-symbols-outlined">send</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-12 border-t border-white/5 relative z-10 bg-[#0f141e]/80">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="flex items-center gap-3">
+                    <div class="bg-primary/20 p-2 rounded-lg">
+                        <span class="material-symbols-outlined text-primary text-xl">code</span>
+                    </div>
+                    <span class="text-slate-400 text-sm font-medium">© 2026 Hendi Firmansah.</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

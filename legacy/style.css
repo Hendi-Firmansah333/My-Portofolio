@@ -1,49 +1,3 @@
-@import "tailwindcss";
-
-@theme {
-  --color-primary: #135bec;
-  --color-background-light: #f6f6f8;
-  --color-background-dark: #0a0f1c;
-  --font-display: var(--font-manrope);
-  --font-body: var(--font-noto-sans);
-  
-  --animate-text-shimmer: text-shimmer 3s linear infinite;
-  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
-}
-
-@keyframes text-shimmer {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: var(--color-background-dark);
-    color: #ffffff; /* Default teks putih */
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: var(--color-background-dark);
-        color: #ffffff;
-    }
-}
-
 /* Custom CSS */
 .mesh-bg {
     position: absolute;
@@ -136,6 +90,61 @@ body {
     color: white;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+
+/* Animasi Teks Mengkilap (Shimmer) */
+@keyframes text-shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.animate-text-shimmer {
+    background: linear-gradient(
+        110deg,
+        #135bec 20%,    /* Warna Primary */
+        #b4c6ef 45%,    /* Warna Putih Terang */
+        #135bec 55%,    /* Warna Primary */
+        #8b5cf6 80%     /* Warna Ungu */
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: text-shimmer 3s linear infinite;
+}
+
+/* Animasi Muncul dari Bawah (Fade In Up) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    opacity: 0; /* Default hidden */
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Delay agar muncul bergantian */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.3s; }
+.delay-300 { animation-delay: 0.5s; }
+.delay-400 { animation-delay: 0.7s; }
+
+/* Efek Glow di belakang teks */
 .hero-glow {
     position: absolute;
     top: 50%;
@@ -148,7 +157,7 @@ body {
     pointer-events: none;
 }
 
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.3s; }
-.delay-300 { animation-delay: 0.5s; }
-.delay-400 { animation-delay: 0.7s; }
+
+
+
+

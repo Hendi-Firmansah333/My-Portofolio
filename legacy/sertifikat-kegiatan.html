@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Activities & Events | Hendi Firmansah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"> 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary": "#135bec", "background-dark": "#101622" }, fontFamily: { "display": ["Manrope", "sans-serif"] } } } }
+    </script>
+</head>
+<body class="bg-background-dark font-display text-white antialiased">
+    
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute top-0 left-0 w-full h-full bg-[#0f172a]"></div>
+        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[100px]"></div>
+    </div>
+
+    <div id="imageModal" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 opacity-0 transition-opacity duration-300" onclick="closeModal()">
+        <button class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors" onclick="closeModal()">
+            <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+        
+        <img id="modalImage" src="" alt="Full Certificate" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl scale-95 transition-transform duration-300" onclick="event.stopPropagation()">
+    </div>
+
+    <div class="relative z-10 min-h-screen flex flex-col">
+        <nav class="p-6">
+            <div class="max-w-7xl mx-auto">
+                <a href="index.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">arrow_back</span> Back to Home
+                </a>
+            </div>
+        </nav>
+
+        <main class="flex-grow px-6 py-10">
+            <div class="max-w-7xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Activities & Events</h1>
+                <p class="text-slate-400 mb-12 max-w-2xl">Dokumentasi sertifikat dari berbagai seminar, workshop, dan kepanitiaan yang telah saya ikuti.</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-emerald-500/50 transition-all bg-white/5 group">
+                        <div class="relative w-full aspect-[3/2] rounded-xl overflow-hidden mb-4 bg-slate-800 shadow-lg border border-white/5 cursor-pointer" onclick="openModal('img/Kegiatan/educator.png')">
+                            <img src="img/Kegiatan/educator.png" 
+                                 alt="Sertifikat Workshop" 
+                                 class="w-full h-full object-cover object-center transform transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold mb-2 leading-tight">Gemini Certified Educator : Google For Education</h3>
+                        <p class="text-sm text-slate-500 mb-4 flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[16px]">calendar_month</span> 12 Oktober 2025
+                        </p>
+                        
+                        <button onclick="openModal('img/Kegiatan/educator.png')" class="inline-flex items-center gap-1 text-emerald-400 text-sm font-bold hover:gap-2 transition-all focus:outline-none">
+                            Lihat Detail <span class="material-symbols-outlined text-[16px]">visibility</span>
+                        </button>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-emerald-500/50 transition-all bg-white/5 group">
+                        <div class="relative w-full aspect-[3/2] rounded-xl overflow-hidden mb-4 bg-slate-800 shadow-lg border border-white/5 cursor-pointer" onclick="openModal('img/Kegiatan/export.png')">
+                            <img src="img/Kegiatan/export.png" 
+                                 alt="Sertifikat GSA" 
+                                 class="w-full h-full object-cover object-center transform transition-transform duration-500 group-hover:scale-105">
+                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mb-2 leading-tight">Export Insights And SEO For Market Expansion</h3>
+                        <p class="text-sm text-slate-500 mb-4 flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[16px]">calendar_month</span> 12 Februari 2025
+                        </p>
+                        <button onclick="openModal('img/Kegiatan/export.png')" class="inline-flex items-center gap-1 text-emerald-400 text-sm font-bold hover:gap-2 transition-all focus:outline-none">
+                            Lihat Detail <span class="material-symbols-outlined text-[16px]">visibility</span>
+                        </button>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-emerald-500/50 transition-all bg-white/5 group">
+                        <div class="relative w-full aspect-[3/2] rounded-xl overflow-hidden mb-4 bg-slate-800 shadow-lg border border-white/5 cursor-pointer" onclick="openModal('img/Kegiatan/task-manager.png')">
+                            <img src="img/Kegiatan/task-manager.png" 
+                                 alt="Sertifikat Laravel" 
+                                 class="w-full h-full object-cover object-center transform transition-transform duration-500 group-hover:scale-105">
+                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span class="material-symbols-outlined text-white text-3xl">zoom_in</span>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold mb-2 leading-tight">Membuat Sistem Task Manager Team Dengan Laravel</h3>
+                        <p class="text-sm text-slate-500 mb-4 flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[16px]">calendar_month</span> 30 Mei 2025
+                        </p>
+                        <button onclick="openModal('img/Kegiatan/task-manager.png')" class="inline-flex items-center gap-1 text-emerald-400 text-sm font-bold hover:gap-2 transition-all focus:outline-none">
+                            Lihat Detail <span class="material-symbols-outlined text-[16px]">visibility</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <footer class="py-8 text-center text-slate-500 text-sm border-t border-white/5">
+            © 2026 Hendi Firmansah
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

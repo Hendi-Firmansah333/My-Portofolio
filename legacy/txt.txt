@@ -1,0 +1,80 @@
+
+
+//praktikum ke 1
+const int LDR_PIN = 34;    // Pin analog untuk LDR
+const int LED_PIN = 13;    // Pin digital untuk LED
+const int threshold = 800; // Ambang batas intensitas cahaya 
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(LED_PIN, OUTPUT);
+}
+
+void loop() {
+  // Membaca nilai analog dari LDR 
+  int lightIntensity = analogRead(LDR_PIN);
+
+  // Menampilkan nilai intensitas cahaya di Serial Monitor 
+  Serial.print("Intensitas Cahaya: ");
+  Serial.println(lightIntensity);
+
+  if (lightIntensity < threshold) {
+    digitalWrite(LED_PIN, HIGH); // LED Menyala 
+    Serial.println("Kondisi GELAP: LED ON");
+  } else {
+    digitalWrite(LED_PIN, LOW); // LED Mati 
+    Serial.println("Kondisi TERANG: LED OFF");
+  }
+
+  delay(500); 
+}
+
+
+
+
+
+
+// piraktik ke 2
+#include <DHT.h> 
+
+#define DHTPIN 12       // Pin data sensor DHT22
+#define DHTTYPE DHT22   // Mendefinisikan tipe sensor 
+#define LED_PIN 2       // Pin digital untuk kontrol LED 
+
+// Inisialisasi objek sensor
+DHT dht(DHTPIN, DHTTYPE); 
+
+void setup() {
+  Serial.begin(115200); 
+  pinMode(LED_PIN, OUTPUT); 
+  dht.begin(); 
+  Serial.println("Sistem Monitoring Suhu Dimulai...");
+}
+
+void loop() {
+  delay(2000); 
+
+  // --- 2. Membaca Data dari Sensor ---
+  float humidity = dht.readHumidity();
+  float temperature = dht.readTemperature();
+
+  if (isnan(humidity) || isnan(temperature)) {
+    Serial.println("Gagal membaca dari sensor DHT!");
+    return; 
+  }
+
+  // --- 3. Menampilkan Hasil ke Serial Monitor ---
+  Serial.print("Kelembaban: ");
+  Serial.print(humidity);
+  Serial.print(" % | Suhu: ");
+  Serial.print(temperature);
+  Serial.println(" C");
+
+  // --- 4. Logika Kontrol LED (Ambang Batas Suhu) ---
+  if (temperature > 30.0) {
+    digitalWrite(LED_PIN, HIGH); 
+    Serial.println(" -> Peringatan: Suhu Tinggi! LED ON");
+  } else {
+    digitalWrite(LED_PIN, LOW); 
+  }
+}
