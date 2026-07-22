@@ -1,11 +1,9 @@
 import SplashScreen from "@/components/SplashScreen";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import PortfolioShowcase from "@/components/PortfolioShowcase";
 import About from "@/components/About";
-import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
-import Certificates from "@/components/Certificates";
-import Works from "@/components/Works";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -21,10 +19,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-      <Skills />
+      <PortfolioShowcase />
       <Experience />
-      <Certificates />
-      <Works />
       <Contact />
       <Footer />
     </>

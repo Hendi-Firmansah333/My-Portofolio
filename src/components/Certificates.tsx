@@ -1,12 +1,18 @@
 import Link from "next/link";
 
-export default function Certificates() {
+interface CertificatesProps {
+  hideHeader?: boolean;
+}
+
+export default function Certificates({ hideHeader = false }: CertificatesProps) {
   return (
-    <section className="py-24 relative z-10" id="certificate">
+    <section className={`${hideHeader ? "py-4" : "py-24"} relative z-10`} id="certificate">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
-          Certificates & Awards
-        </h2>
+        {!hideHeader && (
+          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
+            Certificates & Awards
+          </h2>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <Link

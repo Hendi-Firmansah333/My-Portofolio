@@ -4,13 +4,13 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const navLinks = [
-  { name: "Selected Works", href: "/#work" },
+  { name: "Home", href: "/" },
   { name: "About", href: "/#about" },
-  { name: "Skills", href: "/#skills" },
+  { name: "Portfolio", href: "/#portfolio" },
   { name: "Experience", href: "/#experience" },
-  { name: "Certificate", href: "/#certificate" },
   { name: "Contact", href: "/#contact" },
 ];
 
@@ -58,6 +58,19 @@ export default function Navbar() {
 
           {/* Actions & Mobile Menu Toggle */}
           <div className="flex items-center gap-3">
+            {/* Social Links */}
+            <div className="hidden sm:flex items-center gap-2 mr-1 border-r border-white/10 pr-3">
+              <a href="https://www.instagram.com/hendi_frmnsh/" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 backdrop-blur-md border border-white/5 rounded-full text-slate-400 hover:text-pink-500 hover:bg-white/10 hover:border-pink-500/30 transition-all shadow-sm">
+                <FaInstagram className="text-[15px]" />
+              </a>
+              <a href="https://www.linkedin.com/in/hendi-firmansah/" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 backdrop-blur-md border border-white/5 rounded-full text-slate-400 hover:text-[#0a66c2] hover:bg-white/10 hover:border-[#0a66c2]/30 transition-all shadow-sm">
+                <FaLinkedin className="text-[15px]" />
+              </a>
+              <a href="https://github.com/Hendi-Firmansah333" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 backdrop-blur-md border border-white/5 rounded-full text-slate-400 hover:text-white hover:bg-white/10 hover:border-white/30 transition-all shadow-sm">
+                <FaGithub className="text-[15px]" />
+              </a>
+            </div>
+
             <button className="hidden sm:block bg-gradient-to-r from-primary to-cyan-600 hover:opacity-90 text-white px-6 py-2 rounded-full text-sm font-bold shadow-[0_0_15px_rgba(19,91,236,0.4)] transition-all transform hover:scale-105 active:scale-95">
               Hire Me
             </button>

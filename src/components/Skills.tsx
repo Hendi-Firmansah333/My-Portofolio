@@ -1,11 +1,17 @@
-export default function Skills() {
+interface SkillsProps {
+  hideHeader?: boolean;
+}
+
+export default function Skills({ hideHeader = false }: SkillsProps) {
   return (
-    <section className="py-24 relative z-10" id="skills">
+    <section className={`${hideHeader ? 'py-4' : 'py-24'} relative z-10`} id="skills">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
-          <p className="text-slate-400">My coding stack and tools.</p>
-        </div>
+        {!hideHeader && (
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
+            <p className="text-slate-400">My coding stack and tools.</p>
+          </div>
+        )}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="bg-slate-900/50 backdrop-blur-md p-8 rounded-3xl border border-white/5 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(19,91,236,0.2)] transition-all duration-300 group">
             <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center mb-6">

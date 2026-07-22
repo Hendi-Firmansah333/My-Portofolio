@@ -1,16 +1,22 @@
-export default function Works() {
+interface WorksProps {
+  hideHeader?: boolean;
+}
+
+export default function Works({ hideHeader = false }: WorksProps) {
   return (
-    <section className="py-24 relative z-10" id="work">
+    <section className={`${hideHeader ? 'py-4' : 'py-24'} relative z-10`} id="work">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-3">
-              <span className="w-8 h-[2px] bg-primary block"></span>
-              Selected Works
-            </h2>
-            <p className="text-slate-400 max-w-md">Recent projects demonstrating my skills.</p>
+        {!hideHeader && (
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-3">
+                <span className="w-8 h-[2px] bg-primary block"></span>
+                Selected Works
+              </h2>
+              <p className="text-slate-400 max-w-md">Recent projects demonstrating my skills.</p>
+            </div>
           </div>
-        </div>
+        )}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="group relative rounded-3xl overflow-hidden glass-card transition-all duration-300 hover:-translate-y-2">
             <div className="aspect-video w-full overflow-hidden bg-slate-800 flex items-center justify-center">
