@@ -22,17 +22,29 @@ export default function PortfolioShowcase() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
           <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
             Portfolio Showcase
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-lg font-light">
             Explore my journey through projects, certifications, and technical expertise.
           </p>
-        </div>
+        </motion.div>
 
         {/* Tabs Bar */}
-        <div className="flex justify-center mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex justify-center mb-12"
+        >
           <div className="flex items-center gap-1 sm:gap-2 p-1.5 bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-full shadow-2xl">
             {tabs.map((tab) => (
               <button
@@ -56,7 +68,7 @@ export default function PortfolioShowcase() {
               </button>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Content Area */}
         <div className="min-h-[500px] relative">

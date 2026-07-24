@@ -1,12 +1,43 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Experience() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
     <section className="py-24 relative z-10" id="experience">
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">Experience</h2>
+        <motion.h2 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl md:text-4xl font-bold mb-16 text-center"
+        >
+          Experience
+        </motion.h2>
 
-        <div className="relative timeline-line ml-4 md:ml-0">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="relative timeline-line ml-4 md:ml-0"
+        >
           <div className="space-y-16">
-            <div className="relative pl-12 md:pl-0">
+            <motion.div variants={itemVariants} className="relative pl-12 md:pl-0">
               <div className="md:flex items-start">
                 <div className="md:w-1/2 md:pr-16 md:text-right hidden md:block">
                   <span className="text-sm font-bold text-primary tracking-widest uppercase">
@@ -41,9 +72,9 @@ export default function Experience() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="relative pl-12 md:pl-0">
+            <motion.div variants={itemVariants} className="relative pl-12 md:pl-0">
               <div className="md:flex items-start">
                 <div className="md:w-1/2 md:pr-16 md:text-right hidden md:block">
                   <span className="text-sm font-bold text-slate-500 tracking-widest uppercase">
@@ -78,9 +109,9 @@ export default function Experience() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="relative pl-12 md:pl-0">
+            <motion.div variants={itemVariants} className="relative pl-12 md:pl-0">
               <div className="md:flex items-start">
                 <div className="md:w-1/2 md:pr-16 md:text-right hidden md:block">
                   <span className="text-sm font-bold text-slate-500 tracking-widest uppercase">
@@ -115,9 +146,9 @@ export default function Experience() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

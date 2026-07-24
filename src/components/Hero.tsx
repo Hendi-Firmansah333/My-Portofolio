@@ -15,7 +15,7 @@ export default function Hero() {
     <section className="relative h-screen flex items-center overflow-hidden bg-[#050505]">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px] bg-primary/20 rounded-full blur-[100px] opacity-60 pointer-events-none"></div>
-      
+
       {/* Interactive Cursor Grid Background */}
       <div className="absolute inset-0 z-0">
         <CursorGrid 
