@@ -14,7 +14,26 @@ export default function BootcampCertificates() {
   };
 
   const certificates: any[] = [
-    // Add your bootcamp certificates here
+    {
+      title: "Code Generations and Optimization - Hacktiv8 x IBM",
+      date: "19-21 Agustus 2025",
+      image: "/img/Bootcamp/hacktiv8-ibm.png"
+    },
+    {
+      title: "Certificate of Completion - Hacktiv8 x IBM (2)",
+      date: "19-21 Agustus 2025",
+      image: "/img/Bootcamp/hacktiv8-ibm-2.png"
+    },
+    {
+      title: "Code Kickstart: Python Programming - Samsung Innovation Campus",
+      date: "15 Agu - 13 Sep 2025",
+      image: "/img/Bootcamp/samsung-sic.png"
+    },
+    {
+      title: "Full-Stack Web Developer - DBS Foundation x Dicoding",
+      date: "09 Feb - 20 Jul 2026",
+      image: "/img/Bootcamp/dicoding-dbs.png"
+    }
   ];
 
   return (
