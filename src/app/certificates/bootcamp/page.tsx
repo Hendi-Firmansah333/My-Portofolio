@@ -94,6 +94,16 @@ export default function BootcampCertificates() {
                     >
                       Lihat Detail <span className="material-symbols-outlined text-[16px]">visibility</span>
                     </button>
+                    {cert.link && (
+                      <a
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-slate-400 hover:text-purple-400 text-sm font-bold hover:gap-2 transition-all focus:outline-none w-fit mt-1"
+                      >
+                        Verifikasi <span className="material-symbols-outlined text-[16px]">open_in_new</span>
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}

@@ -49,6 +49,42 @@ export default function DicodingCertificates() {
       date: "06 Oktober 2025",
       image: "/img/DICODING/dasar-ai.png",
       link: "https://www.dicoding.com/certificates/ERZR211J2PYV"
+    },
+    {
+      title: "Belajar Fundamental Back-End dengan JavaScript",
+      date: "25 Maret 2026",
+      image: "/img/DICODING/dicoding-backend.png",
+      link: "https://www.dicoding.com/certificates/MEPJOJ9NWZ3V"
+    },
+    {
+      title: "Belajar Fundamental Aplikasi Web dengan React",
+      date: "2026",
+      image: "/img/DICODING/dicoding-react.png",
+      link: "https://www.dicoding.com/certificates/N9ZON4E6RXG5"
+    },
+    {
+      title: "Belajar Dasar Cloud dan Gen AI di AWS",
+      date: "10 Februari 2026",
+      image: "/img/DICODING/dicoding-aws.png",
+      link: "https://www.dicoding.com/certificates/EYX4Q1R46PDL"
+    },
+    {
+      title: "Membangun Aplikasi Gen AI dengan Microsoft Azure",
+      date: "10 Februari 2026",
+      image: "/img/DICODING/azure-genai.png",
+      link: "https://www.dicoding.com/certificates/NVP7NYGWOZR0"
+    },
+    {
+      title: "Memulai Dasar Pemrograman untuk Menjadi Pengembang Software",
+      date: "09 Februari 2026",
+      image: "/img/DICODING/dasar-pemrograman.png",
+      link: "https://www.dicoding.com/certificates/EYX4KD5M6PDL"
+    },
+    {
+      title: "Belajar Membuat Aplikasi Web dengan React",
+      date: "25 Februari 2026",
+      image: "/img/DICODING/web-react.png",
+      link: "https://www.dicoding.com/certificates/JMZVOGKJ3XN9"
     }
   ];
 
