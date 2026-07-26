@@ -71,9 +71,14 @@ export default function Navbar() {
               </a>
             </div>
 
-            <button className="hidden sm:block bg-gradient-to-r from-primary to-cyan-600 hover:opacity-90 text-white px-6 py-2 rounded-full text-sm font-bold shadow-[0_0_15px_rgba(19,91,236,0.4)] transition-all transform hover:scale-105 active:scale-95">
+            <a 
+              href="/CV.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hidden sm:block bg-gradient-to-r from-primary to-cyan-600 hover:opacity-90 text-white px-6 py-2 rounded-full text-sm font-bold shadow-[0_0_15px_rgba(19,91,236,0.4)] transition-all transform hover:scale-105 active:scale-95"
+            >
               Hire Me
-            </button>
+            </a>
 
             <button
               onClick={() => setIsOpen(!isOpen)}
