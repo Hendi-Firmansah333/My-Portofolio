@@ -28,6 +28,51 @@ export default function KegiatanCertificates() {
       title: "Membuat Sistem Task Manager Team Dengan Laravel",
       date: "30 Mei 2025",
       image: "/img/Kegiatan/task-manager.png"
+    },
+    {
+      title: "Google Student Ambassador - Class of 2025",
+      date: "Tahun 2025",
+      image: "/img/Kegiatan/student-ambassador.png"
+    },
+    {
+      title: "Gemini Certified Student",
+      date: "01 Februari 2026",
+      image: "/img/Kegiatan/gemini-student.png"
+    },
+    {
+      title: "Next-Level Google Tools Hacks & Must Have Google Certification",
+      date: "06-10 April 2026",
+      image: "/img/Kegiatan/google-tools.png"
+    },
+    {
+      title: "Skilvul: Mengapa Literasi AI Itu Penting",
+      date: "04 Maret 2026",
+      image: "/img/Kegiatan/skilvul-ai.png"
+    },
+    {
+      title: "Productivity Masterclass – Google Tools Hacks for Students",
+      date: "24 Februari 2026",
+      image: "/img/Kegiatan/madani-google.png"
+    },
+    {
+      title: "Kuliah Dosen Praktisi: Web Technology Trends",
+      date: "21 Desember 2024",
+      image: "/img/Kegiatan/polinela-web.png"
+    },
+    {
+      title: "Webinar IIoT dan AI: Membangun Ekosistem Industri",
+      date: "04 Juli 2026",
+      image: "/img/Kegiatan/iiot-ai.png"
+    },
+    {
+      title: "Pelatihan Dasar-dasar Keamanan AI - Komdigi",
+      date: "24 Februari 2025",
+      image: "/img/Kegiatan/komdigi-ai.png"
+    },
+    {
+      title: "Webinar: From Ideas to Automation (n8n)",
+      date: "04 Oktober 2025",
+      image: "/img/Kegiatan/n8n-automation.png"
     }
   ];
 
