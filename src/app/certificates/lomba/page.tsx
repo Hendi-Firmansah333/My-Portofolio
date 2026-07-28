@@ -13,7 +13,24 @@ export default function LombaCertificates() {
     setModalOpen(true);
   };
 
-  const certificates: any[] = [];
+  const certificates: any[] = [
+    {
+      title: "Juara 1 Kategori Desain Visual Inovasi Bahasa Inggris - IT FEST 2025",
+      date: "11 - 31 Oktober 2025",
+      image: "/img/Lomba/it-fest.png"
+    },
+    {
+      title: "Participant #JuaraVibeCoding Study Jam - Google Developer Groups",
+      date: "Mei 2026",
+      image: "/img/Lomba/juara-vibe-coding.png",
+      link: "https://goo.gle/jvc-cert-verifier"
+    },
+    {
+      title: "Sertifikat Lomba 3 (Silakan disesuaikan)",
+      date: "2026",
+      image: "/img/Lomba/placeholder.png"
+    }
+  ];
 
   return (
     <div className="relative z-10 min-h-screen flex flex-col">
