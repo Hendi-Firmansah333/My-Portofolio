@@ -153,6 +153,29 @@ export default function DicodingCertificates() {
               </div>
             ))}
           </div>
+
+          {/* Elegant More Certificates Indicator */}
+          <div className="mt-24 pb-8 flex flex-col items-center justify-center text-center relative group cursor-default">
+            {/* Background Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary/10 blur-[100px] rounded-full w-full max-w-md h-40 pointer-events-none transition-all duration-700 group-hover:bg-primary/20 group-hover:scale-110"></div>
+            
+            <div className="relative z-10 flex flex-col items-center">
+              <div className="flex items-center gap-4 mb-6 opacity-70 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="h-[2px] w-12 md:w-24 bg-gradient-to-r from-transparent to-primary/50 group-hover:w-20 md:group-hover:w-32 transition-all duration-700 ease-out"></div>
+                <div className="p-3 rounded-full bg-white/5 border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)] group-hover:border-primary/30 group-hover:shadow-[0_0_20px_rgba(19,91,236,0.3)] transition-all duration-500 relative flex items-center justify-center">
+                  <div className="absolute inset-0 rounded-full bg-primary/20 animate-ping opacity-0 group-hover:opacity-100 duration-1000"></div>
+                  <span className="material-symbols-outlined text-primary/80 group-hover:text-primary relative z-10 transition-colors">auto_awesome</span>
+                </div>
+                <div className="h-[2px] w-12 md:w-24 bg-gradient-to-l from-transparent to-primary/50 group-hover:w-20 md:group-hover:w-32 transition-all duration-700 ease-out"></div>
+              </div>
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-wide group-hover:tracking-wider transition-all duration-500">
+                Dan Masih Banyak Lagi...
+              </h3>
+              <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base leading-relaxed group-hover:text-slate-300 transition-colors duration-500">
+                Sertifikat di atas hanyalah sebagian dari perjalanan belajar saya. Masih terdapat berbagai sertifikasi dan kelas lainnya yang telah saya selesaikan untuk terus meningkatkan keterampilan saya di bidang teknologi.
+              </p>
+            </div>
+          </div>
         </div>
       </main>
 
