@@ -9,18 +9,58 @@ export default function About() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+      transition: { staggerChildren: 0.15, delayChildren: 0.2 },
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.9, filter: "blur(10px)", y: 40 },
+    visible: { 
+      opacity: 1, 
+      scale: 1, 
+      filter: "blur(0px)",
+      y: 0,
+      transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } 
+    },
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: 30, filter: "blur(8px)" },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      filter: "blur(0px)",
+      transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } 
+    },
   };
 
   const textVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+    hidden: { opacity: 0, y: 20, filter: "blur(5px)" },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      filter: "blur(0px)",
+      transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] } 
+    },
+  };
+  
+  const lineVariants = {
+    hidden: { scaleX: 0, opacity: 0, originX: 0 },
+    visible: { 
+      scaleX: 1, 
+      opacity: 1, 
+      transition: { duration: 0.8, ease: "easeInOut", delay: 0.3 } 
+    },
+  };
+  
+  const tickerVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } 
+    },
   };
 
   return (
@@ -34,12 +74,12 @@ export default function About() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, amount: 0.2, margin: "0px 0px -15% 0px" }}
           className="flex flex-col lg:flex-row gap-16 items-center relative z-10"
         >
           {/* Left Side: Floating Image Card */}
           <motion.div 
-            variants={itemVariants}
+            variants={imageVariants}
             className="lg:w-2/5 w-full relative group perspective-1000"
           >
             {/* Glowing Animated Border Container */}
@@ -85,11 +125,11 @@ export default function About() {
           <div className="lg:w-3/5 w-full flex flex-col gap-8">
             
             {/* Title with Character Reveal effect (simulated by word stagger or simple fade) */}
-            <motion.div variants={itemVariants}>
+            <motion.div variants={titleVariants}>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-2 flex items-center gap-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
                 About Me.
               </h2>
-              <div className="h-1 w-20 bg-gradient-to-r from-primary to-cyan-400 rounded-full" />
+              <motion.div variants={lineVariants} className="h-1 w-20 bg-gradient-to-r from-primary to-cyan-400 rounded-full" />
             </motion.div>
 
             {/* Staggered Paragraphs */}
@@ -103,7 +143,7 @@ export default function About() {
             </motion.div>
 
             {/* Animated Police Line / Tech Stack Ticker */}
-            <motion.div variants={itemVariants} className="mt-8 relative w-full overflow-hidden rounded-xl h-24 flex items-center justify-center">
+            <motion.div variants={tickerVariants} className="mt-8 relative w-full overflow-hidden rounded-xl h-24 flex items-center justify-center">
               <div className="absolute w-[120%] bg-primary text-white border-y-4 border-cyan-300 py-3 transform -rotate-3 shadow-[0_0_30px_rgba(19,91,236,0.4)]">
                 
                 {/* Diagonal stripes overlay (like police tape) */}
