@@ -53,14 +53,14 @@ export default function Skills({ hideHeader = false }: SkillsProps) {
               {[...row1, ...row1].map((tech, idx) => (
                 <div 
                   key={`row1-${idx}`} 
-                  className="flex flex-col items-center justify-center min-w-[130px] h-[130px] md:min-w-[150px] md:h-[150px] bg-slate-900/40 backdrop-blur-md rounded-[2rem] border border-white/5 hover:border-white/20 hover:bg-white/5 transition-all duration-300 group relative overflow-hidden shadow-lg"
+                  className="flex flex-col items-center justify-center min-w-[100px] h-[100px] sm:min-w-[130px] sm:h-[130px] md:min-w-[150px] md:h-[150px] bg-slate-900/40 backdrop-blur-md rounded-[1.5rem] sm:rounded-[2rem] border border-white/5 hover:border-white/20 hover:bg-white/5 transition-all duration-300 group relative overflow-hidden shadow-lg"
                 >
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none" style={{ backgroundColor: tech.color }} />
                   <tech.icon 
-                    className="text-5xl mb-3 opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110 drop-shadow-lg" 
+                    className="text-4xl sm:text-5xl mb-2 sm:mb-3 opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110 drop-shadow-lg" 
                     style={{ color: tech.color }} 
                   />
-                  <span className="text-sm font-semibold text-slate-400 group-hover:text-white transition-colors duration-300">{tech.name}</span>
+                  <span className="text-xs sm:text-sm font-semibold text-slate-400 group-hover:text-white transition-colors duration-300">{tech.name}</span>
                 </div>
               ))}
             </motion.div>
@@ -76,14 +76,14 @@ export default function Skills({ hideHeader = false }: SkillsProps) {
               {[...row2, ...row2].map((tech, idx) => (
                 <div 
                   key={`row2-${idx}`} 
-                  className="flex flex-col items-center justify-center min-w-[130px] h-[130px] md:min-w-[150px] md:h-[150px] bg-slate-900/40 backdrop-blur-md rounded-[2rem] border border-white/5 hover:border-white/20 hover:bg-white/5 transition-all duration-300 group relative overflow-hidden shadow-lg"
+                  className="flex flex-col items-center justify-center min-w-[100px] h-[100px] sm:min-w-[130px] sm:h-[130px] md:min-w-[150px] md:h-[150px] bg-slate-900/40 backdrop-blur-md rounded-[1.5rem] sm:rounded-[2rem] border border-white/5 hover:border-white/20 hover:bg-white/5 transition-all duration-300 group relative overflow-hidden shadow-lg"
                 >
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none" style={{ backgroundColor: tech.color }} />
                   <tech.icon 
-                    className="text-5xl mb-3 opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110 drop-shadow-lg" 
+                    className="text-4xl sm:text-5xl mb-2 sm:mb-3 opacity-60 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110 drop-shadow-lg" 
                     style={{ color: tech.color }} 
                   />
-                  <span className="text-sm font-semibold text-slate-400 group-hover:text-white transition-colors duration-300">{tech.name}</span>
+                  <span className="text-xs sm:text-sm font-semibold text-slate-400 group-hover:text-white transition-colors duration-300">{tech.name}</span>
                 </div>
               ))}
             </motion.div>

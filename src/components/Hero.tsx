@@ -31,19 +31,19 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-        className="absolute top-0 right-0 h-screen w-full lg:w-[45%] hidden lg:block z-20"
+        className="absolute top-0 right-0 h-screen w-full lg:w-[45%] opacity-40 lg:opacity-100 z-0 lg:z-20 pointer-events-none lg:pointer-events-auto translate-x-[30%] sm:translate-x-[20%] lg:translate-x-0 scale-[0.55] sm:scale-75 lg:scale-100 origin-top-right lg:origin-center"
       >
         <Lanyard3D />
       </motion.div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full relative z-30 pointer-events-none">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-30 pointer-events-none">
         
         {/* Sisi Kiri: Tipografi & Copywriting (High-Tech Style) */}
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col gap-6 lg:w-[55%] pointer-events-auto mt-20 md:mt-12 lg:mt-20"
+          className="flex flex-col gap-5 lg:gap-6 w-full lg:w-[60%] pointer-events-auto mt-28 sm:mt-24 md:mt-12 lg:mt-20 relative z-10 p-5 sm:p-8 lg:p-0 bg-[#0f172a]/40 lg:bg-transparent backdrop-blur-md lg:backdrop-blur-none rounded-3xl lg:rounded-none border border-white/10 lg:border-transparent shadow-2xl lg:shadow-none"
         >
 
           <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-white leading-[1.05] tracking-tighter drop-shadow-sm">

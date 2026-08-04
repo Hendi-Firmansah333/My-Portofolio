@@ -105,17 +105,17 @@ export default function About() {
                 <motion.div 
                   animate={{ y: [0, -15, 0] }}
                   transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }}
-                  className="absolute -right-4 top-10 bg-slate-900/80 backdrop-blur-md p-3 rounded-2xl border border-white/10 shadow-xl"
+                  className="absolute -right-2 sm:-right-4 top-10 bg-slate-900/80 backdrop-blur-md p-2 sm:p-3 rounded-xl sm:rounded-2xl border border-white/10 shadow-xl"
                 >
-                  <SiReact className="text-3xl text-cyan-400" />
+                  <SiReact className="text-2xl sm:text-3xl text-cyan-400" />
                 </motion.div>
 
                 <motion.div 
                   animate={{ y: [0, 15, 0] }}
                   transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                  className="absolute -left-4 bottom-20 bg-slate-900/80 backdrop-blur-md p-3 rounded-2xl border border-white/10 shadow-xl"
+                  className="absolute -left-2 sm:-left-4 bottom-20 bg-slate-900/80 backdrop-blur-md p-2 sm:p-3 rounded-xl sm:rounded-2xl border border-white/10 shadow-xl"
                 >
-                  <SiLaravel className="text-3xl text-red-500" />
+                  <SiLaravel className="text-2xl sm:text-3xl text-red-500" />
                 </motion.div>
               </div>
             </motion.div>

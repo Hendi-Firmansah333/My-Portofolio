@@ -43,14 +43,14 @@ export default function PortfolioShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex justify-center mb-12"
+          className="flex justify-center mb-12 w-full px-2"
         >
-          <div className="flex items-center gap-1 sm:gap-2 p-1.5 bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-full shadow-2xl">
+          <div className="flex items-center gap-1 sm:gap-2 p-1.5 bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-full shadow-2xl overflow-x-auto w-full sm:w-max max-w-full scrollbar-hide">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative px-4 sm:px-8 py-3 rounded-full text-sm sm:text-base font-medium transition-colors z-10 ${
+                className={`relative flex-1 sm:flex-none px-3 sm:px-8 py-2 sm:py-3 whitespace-nowrap rounded-full text-xs sm:text-base font-medium transition-colors z-10 ${
                   activeTab === tab.id ? "text-white" : "text-slate-400 hover:text-slate-200"
                 }`}
               >

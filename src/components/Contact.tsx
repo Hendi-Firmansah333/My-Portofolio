@@ -166,7 +166,7 @@ export default function Contact() {
 
           {/* RIGHT COLUMN: Quick Connect Intents (Guestbook Style) */}
           <div className="flex flex-col gap-6">
-            <motion.h3 variants={itemVariants} className="text-sm font-semibold text-slate-400 ml-2 hidden lg:block">
+            <motion.h3 variants={itemVariants} className="text-sm font-semibold text-slate-400 ml-2">
               Quick Connect Options
             </motion.h3>
             

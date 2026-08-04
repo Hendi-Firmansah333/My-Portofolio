@@ -113,6 +113,17 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
+              
+              {/* Mobile Hire Me Button */}
+              <a 
+                href="/CV.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="sm:hidden mt-2 bg-gradient-to-r from-primary to-cyan-600 hover:opacity-90 text-white px-4 py-3 rounded-xl text-sm font-bold shadow-[0_0_15px_rgba(19,91,236,0.2)] transition-all"
+              >
+                Hire Me
+              </a>
             </div>
           </motion.div>
         )}
