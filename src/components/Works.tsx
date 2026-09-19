@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { SiLaravel, SiReact, SiTailwindcss } from "react-icons/si";
 
 interface WorksProps {
   hideHeader?: boolean;
@@ -8,10 +9,14 @@ interface WorksProps {
 const projects = [
   {
     id: "innovation4force",
-    title: "Innovation 4 Force",
-    description: "An international IT competition website featuring global tech synergy, designed with modern UI/UX principles for showcasing Web Application development challenges.",
+    title: "🚀 Web Lomba - Innovation 4 Force",
+    description: "Innovation 4 Force adalah platform web full-stack modern yang dirancang untuk mengelola registrasi kompetisi, jadwal perlombaan (timeline), panduan lomba (guidebook), dewan juri (judges), sponsor, serta dasbor administrasi secara interaktif dan terpusat.",
     image: "/img/projects/i4force.jpeg",
-    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+    techStacks: [
+      { category: "BACKEND", name: "LARAVEL 11 / PHP 8.3+", bg: "bg-[#FF2D20]", text: "text-white", icon: SiLaravel },
+      { category: "FRONTEND", name: "REACT 19 + VITE", bg: "bg-[#61DAFB]", text: "text-slate-900", icon: SiReact },
+      { category: "STYLING", name: "TAILWIND CSS 4", bg: "bg-[#06B6D4]", text: "text-white", icon: SiTailwindcss }
+    ],
     links: {
       web: "https://i4force.web.id/",
       github: "https://github.com/Hendi-Firmansah333/Web_Innovation4force"
@@ -60,17 +65,30 @@ export default function Works({ hideHeader = false }: WorksProps) {
                 </div>
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="px-2.5 py-1 text-[10px] font-bold tracking-wider uppercase rounded-full bg-primary/10 text-cyan-400 border border-primary/20">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-slate-400 text-sm mb-5 flex-grow line-clamp-3">
+                
+                <hr className="border-white/10 mb-4" />
+                
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.techStacks.map((tech, idx) => {
+                    const Icon = tech.icon;
+                    return (
+                      <div key={idx} className="flex text-[9px] font-bold tracking-wider uppercase rounded-sm overflow-hidden border border-white/10 shadow-sm">
+                        <div className="bg-slate-700/80 text-slate-200 px-2 py-1 flex items-center gap-1.5">
+                          <Icon className="text-[10px]" />
+                          {tech.category}
+                        </div>
+                        <div className={`${tech.bg} ${tech.text} px-2 py-1 flex items-center`}>
+                          {tech.name}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                
+                <p className="text-slate-300 text-sm mb-5 flex-grow line-clamp-4 leading-relaxed">
                   {project.description}
                 </p>
                 <div className="flex items-center gap-4 mt-auto pt-4 border-t border-white/5">
