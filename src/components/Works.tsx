@@ -10,7 +10,7 @@ const projects = [
     id: "innovation4force",
     title: "Innovation 4 Force",
     description: "An international IT competition website featuring global tech synergy, designed with modern UI/UX principles for showcasing Web Application development challenges.",
-    image: "/img/projects/i4force.png",
+    image: "/img/projects/i4force.jpeg",
     tags: ["Next.js", "Tailwind CSS", "TypeScript"],
     links: {
       web: "https://i4force.web.id/",
