@@ -83,14 +83,15 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ repeat: Infinity, duration: 0.8, repeatType: "reverse" }}
-              className="inline-block font-light ml-1"
+              className="inline-block text-cyan-400 ml-1"
+              style={{ WebkitTextFillColor: '#22d3ee' }}
             >
               |
             </motion.span>
           </h1>
 
           <p className="text-slate-400 text-lg md:text-xl max-w-lg leading-relaxed font-light mt-2">
-            A passionate <strong className="text-slate-200">Frontend Developer</strong> crafting immersive digital experiences. I specialize in building interactive <strong className="text-slate-200">UI</strong> and modern web applications, bringing concepts to life with elegant code and seamless performance.
+            Crafting immersive digital experiences through interactive <strong className="text-slate-200">UI</strong>, <strong className="text-slate-200">WebGL</strong>, and modern frontend architectures. Bringing concepts to life with elegant code and seamless performance.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
