@@ -13,21 +13,28 @@ const SpecularButton = dynamic(() => import("@/components/animations/SpecularBut
 
 export default function Hero() {
   const [text, setText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
   const fullText = "Firmansah.";
 
   useEffect(() => {
-    let i = 0;
-    const typingInterval = setInterval(() => {
-      if (i < fullText.length) {
-        setText(fullText.slice(0, i + 1));
-        i++;
-      } else {
-        clearInterval(typingInterval);
-      }
-    }, 150);
+    let timeout: NodeJS.Timeout;
     
-    return () => clearInterval(typingInterval);
-  }, []);
+    if (isDeleting) {
+      if (text.length > 0) {
+        timeout = setTimeout(() => setText(text.slice(0, -1)), 100);
+      } else {
+        setIsDeleting(false);
+      }
+    } else {
+      if (text.length < fullText.length) {
+        timeout = setTimeout(() => setText(fullText.slice(0, text.length + 1)), 150);
+      } else {
+        timeout = setTimeout(() => setIsDeleting(true), 3000);
+      }
+    }
+
+    return () => clearTimeout(timeout);
+  }, [text, isDeleting]);
 
   return (
     <section className="relative h-screen flex items-center overflow-hidden bg-[#050505]">
