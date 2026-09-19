@@ -75,9 +75,9 @@ export default function Hero() {
         >
 
           <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-white leading-[1.05] tracking-tighter drop-shadow-sm">
-            Hendi <br className="hidden md:block" />
+            Frontend <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-primary animate-text-shimmer bg-[length:200%_auto]">
-              <TypingText fullText="Firmansah." />
+              <TypingText fullText="Developer." />
             </span>
             <motion.span 
               initial={{ opacity: 0 }}
