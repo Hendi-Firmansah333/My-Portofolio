@@ -18,7 +18,7 @@ export default function PortfolioShowcase() {
   ];
 
   return (
-    <section className="py-24 relative z-10 scroll-mt-24" id="portfolio">
+    <section className="py-24 relative z-10 scroll-mt-16" id="portfolio">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
         {/* Header */}
