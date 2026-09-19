@@ -90,7 +90,7 @@ export default function Hero() {
             </motion.span>
           </h1>
 
-          <p className="text-slate-400 text-lg md:text-xl max-w-2xl leading-relaxed font-light mt-4">
+          <p className="text-slate-400 text-base md:text-lg max-w-2xl leading-relaxed font-light mt-0 lg:-mt-2">
             A passionate <strong className="text-slate-200">Frontend Developer</strong> dedicated to crafting immersive digital experiences. I specialize in building interactive <strong className="text-slate-200">UI</strong> and modern web applications, bringing concepts to life with elegant code and seamless performance.
           </p>
 
