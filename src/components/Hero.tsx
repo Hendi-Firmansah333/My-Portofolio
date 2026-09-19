@@ -125,27 +125,27 @@ export default function Hero() {
           {/* Tech Stack Marquee (Running Logos) */}
           <div className="mt-4 overflow-hidden w-full max-w-md relative [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
             <motion.div 
-              className="flex gap-8 items-center w-max"
+              className="flex gap-6 items-center w-max"
               animate={{ x: ["0%", "-50%"] }}
               transition={{ repeat: Infinity, ease: "linear", duration: 15 }}
             >
               {/* First Set */}
-              <SiReact className="text-3xl text-slate-500 hover:text-[#61DAFB] transition-colors cursor-pointer" />
-              <SiNextdotjs className="text-3xl text-slate-500 hover:text-white transition-colors cursor-pointer" />
-              <SiTypescript className="text-3xl text-slate-500 hover:text-[#3178C6] transition-colors cursor-pointer" />
-              <SiTailwindcss className="text-3xl text-slate-500 hover:text-[#06B6D4] transition-colors cursor-pointer" />
-              <SiNodedotjs className="text-3xl text-slate-500 hover:text-[#339933] transition-colors cursor-pointer" />
-              <SiThreedotjs className="text-3xl text-slate-500 hover:text-white transition-colors cursor-pointer" />
-              <SiVite className="text-3xl text-slate-500 hover:text-[#646CFF] transition-colors cursor-pointer" />
+              <SiReact className="text-2xl text-slate-500 hover:text-[#61DAFB] transition-colors cursor-pointer" />
+              <SiNextdotjs className="text-2xl text-slate-500 hover:text-white transition-colors cursor-pointer" />
+              <SiTypescript className="text-2xl text-slate-500 hover:text-[#3178C6] transition-colors cursor-pointer" />
+              <SiTailwindcss className="text-2xl text-slate-500 hover:text-[#06B6D4] transition-colors cursor-pointer" />
+              <SiNodedotjs className="text-2xl text-slate-500 hover:text-[#339933] transition-colors cursor-pointer" />
+              <SiThreedotjs className="text-2xl text-slate-500 hover:text-white transition-colors cursor-pointer" />
+              <SiVite className="text-2xl text-slate-500 hover:text-[#646CFF] transition-colors cursor-pointer" />
               
               {/* Duplicated for infinite scroll */}
-              <SiReact className="text-3xl text-slate-500 hover:text-[#61DAFB] transition-colors cursor-pointer" />
-              <SiNextdotjs className="text-3xl text-slate-500 hover:text-white transition-colors cursor-pointer" />
-              <SiTypescript className="text-3xl text-slate-500 hover:text-[#3178C6] transition-colors cursor-pointer" />
-              <SiTailwindcss className="text-3xl text-slate-500 hover:text-[#06B6D4] transition-colors cursor-pointer" />
-              <SiNodedotjs className="text-3xl text-slate-500 hover:text-[#339933] transition-colors cursor-pointer" />
-              <SiThreedotjs className="text-3xl text-slate-500 hover:text-white transition-colors cursor-pointer" />
-              <SiVite className="text-3xl text-slate-500 hover:text-[#646CFF] transition-colors cursor-pointer" />
+              <SiReact className="text-2xl text-slate-500 hover:text-[#61DAFB] transition-colors cursor-pointer" />
+              <SiNextdotjs className="text-2xl text-slate-500 hover:text-white transition-colors cursor-pointer" />
+              <SiTypescript className="text-2xl text-slate-500 hover:text-[#3178C6] transition-colors cursor-pointer" />
+              <SiTailwindcss className="text-2xl text-slate-500 hover:text-[#06B6D4] transition-colors cursor-pointer" />
+              <SiNodedotjs className="text-2xl text-slate-500 hover:text-[#339933] transition-colors cursor-pointer" />
+              <SiThreedotjs className="text-2xl text-slate-500 hover:text-white transition-colors cursor-pointer" />
+              <SiVite className="text-2xl text-slate-500 hover:text-[#646CFF] transition-colors cursor-pointer" />
             </motion.div>
           </div>
         </motion.div>
