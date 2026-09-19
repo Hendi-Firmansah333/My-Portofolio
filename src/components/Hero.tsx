@@ -40,7 +40,7 @@ const TypingText = ({ fullText }: { fullText: string }) => {
 
 export default function Hero() {
   return (
-    <section className="relative h-[100dvh] min-h-[600px] flex items-center overflow-hidden bg-[#050505]">
+    <section className="relative h-screen flex items-center overflow-hidden bg-[#050505]">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px] bg-primary/20 rounded-full blur-[100px] opacity-60 pointer-events-none"></div>
 
@@ -71,7 +71,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col gap-4 lg:gap-5 w-full lg:w-[60%] pointer-events-auto relative z-10 p-5 sm:p-8 lg:p-0 bg-[#0f172a]/40 lg:bg-transparent backdrop-blur-md lg:backdrop-blur-none rounded-3xl lg:rounded-none border border-white/10 lg:border-transparent shadow-2xl lg:shadow-none"
+          className="flex flex-col gap-4 lg:gap-5 w-full lg:w-[60%] pointer-events-auto mt-28 sm:mt-24 md:mt-12 lg:mt-20 relative z-10 p-5 sm:p-8 lg:p-0 bg-[#0f172a]/40 lg:bg-transparent backdrop-blur-md lg:backdrop-blur-none rounded-3xl lg:rounded-none border border-white/10 lg:border-transparent shadow-2xl lg:shadow-none"
         >
 
           <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-white leading-[1.05] tracking-tighter drop-shadow-sm">
