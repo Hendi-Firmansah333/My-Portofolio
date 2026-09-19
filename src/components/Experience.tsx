@@ -17,7 +17,7 @@ export default function Experience() {
   };
 
   return (
-    <section className="py-24 relative z-10" id="experience">
+    <section className="py-24 relative z-10 scroll-mt-24" id="experience">
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
