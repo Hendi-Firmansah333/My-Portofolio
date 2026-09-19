@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { SiReact, SiLaravel, SiNextdotjs, SiTailwindcss, SiMongodb, SiPostgresql, SiDocker } from "react-icons/si";
+import { SiReact, SiNextdotjs, SiTailwindcss, SiTypescript, SiFramer, SiThreedotjs, SiHtml5, SiCss3 } from "react-icons/si";
 
 export default function About() {
   const containerVariants = {
@@ -64,7 +64,7 @@ export default function About() {
   };
 
   return (
-    <section className="py-24 relative z-10 overflow-hidden" id="about">
+    <section className="py-24 relative z-10 overflow-hidden scroll-mt-24" id="about">
       {/* Background Decorative Elements */}
       <div className="absolute top-40 right-10 w-72 h-72 bg-primary/10 rounded-full blur-[80px] pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
@@ -126,19 +126,19 @@ export default function About() {
             
             {/* Title with Character Reveal effect (simulated by word stagger or simple fade) */}
             <motion.div variants={titleVariants}>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-2 flex items-center gap-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-2 flex items-center gap-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
                 About Me.
               </h2>
               <motion.div variants={lineVariants} className="h-1 w-20 bg-gradient-to-r from-primary to-cyan-400 rounded-full" />
             </motion.div>
 
             {/* Staggered Paragraphs */}
-            <motion.div variants={containerVariants} className="space-y-6 text-slate-300 text-lg leading-relaxed font-light">
+            <motion.div variants={containerVariants} className="space-y-4 text-slate-300 text-base md:text-lg leading-relaxed font-light">
               <motion.p variants={textVariants}>
-                Hello! I'm <strong className="text-white font-bold">Hendi Firmansah</strong>, a passionate <strong className="text-cyan-400 font-bold">Fullstack Developer</strong> based in Indonesia. I specialize in architecting robust backend systems and crafting immersive, high-end frontend experiences.
+                Hello! I'm <strong className="text-white font-bold">Hendi Firmansah</strong>, an undergraduate student at <strong className="text-white font-bold">Politeknik Negeri Lampung</strong> and a passionate <strong className="text-cyan-400 font-bold">Frontend Developer</strong> based in Indonesia. I specialize in crafting immersive, highly interactive, and visually stunning web experiences.
               </motion.p>
               <motion.p variants={textVariants}>
-                My technical foundation is built deep within the <strong className="text-red-400 font-bold">Laravel</strong> and <strong className="text-green-400 font-bold">Node.js</strong> ecosystems for scalable backends, seamlessly integrated with modern frontend powerhouses like <strong className="text-cyan-400 font-bold">React</strong>, <strong className="text-white font-bold">Next.js</strong>, and Tailwind CSS.
+                My technical foundation is built deeply around modern frontend technologies like <strong className="text-cyan-400 font-bold">React</strong>, <strong className="text-white font-bold">Next.js</strong>, and <strong className="text-cyan-400 font-bold">Tailwind CSS</strong>, allowing me to translate creative concepts into elegant, scalable, and seamless user interfaces.
               </motion.p>
             </motion.div>
 
@@ -157,22 +157,20 @@ export default function About() {
                   {/* First Set */}
                   <div className="flex items-center gap-6 font-black tracking-widest uppercase text-sm sm:text-base drop-shadow-md">
                     <SiReact className="text-2xl text-cyan-300" /> REACT <span className="text-cyan-300 opacity-50">•</span>
-                    <SiLaravel className="text-2xl text-red-400" /> LARAVEL <span className="text-cyan-300 opacity-50">•</span>
                     <SiNextdotjs className="text-2xl text-black" /> NEXT.JS <span className="text-cyan-300 opacity-50">•</span>
                     <SiTailwindcss className="text-2xl text-cyan-300" /> TAILWIND CSS <span className="text-cyan-300 opacity-50">•</span>
-                    <SiMongodb className="text-2xl text-green-400" /> MONGODB <span className="text-cyan-300 opacity-50">•</span>
-                    <SiPostgresql className="text-2xl text-blue-300" /> POSTGRESQL <span className="text-cyan-300 opacity-50">•</span>
-                    <SiDocker className="text-2xl text-blue-400" /> DOCKER <span className="text-cyan-300 opacity-50">•</span>
+                    <SiTypescript className="text-2xl text-blue-400" /> TYPESCRIPT <span className="text-cyan-300 opacity-50">•</span>
+                    <SiFramer className="text-2xl text-white" /> FRAMER MOTION <span className="text-cyan-300 opacity-50">•</span>
+                    <SiThreedotjs className="text-2xl text-white" /> THREE.JS <span className="text-cyan-300 opacity-50">•</span>
                   </div>
                   {/* Duplicate Set for Infinite Loop */}
                   <div className="flex items-center gap-6 font-black tracking-widest uppercase text-sm sm:text-base drop-shadow-md">
                     <SiReact className="text-2xl text-cyan-300" /> REACT <span className="text-cyan-300 opacity-50">•</span>
-                    <SiLaravel className="text-2xl text-red-400" /> LARAVEL <span className="text-cyan-300 opacity-50">•</span>
                     <SiNextdotjs className="text-2xl text-black" /> NEXT.JS <span className="text-cyan-300 opacity-50">•</span>
                     <SiTailwindcss className="text-2xl text-cyan-300" /> TAILWIND CSS <span className="text-cyan-300 opacity-50">•</span>
-                    <SiMongodb className="text-2xl text-green-400" /> MONGODB <span className="text-cyan-300 opacity-50">•</span>
-                    <SiPostgresql className="text-2xl text-blue-300" /> POSTGRESQL <span className="text-cyan-300 opacity-50">•</span>
-                    <SiDocker className="text-2xl text-blue-400" /> DOCKER <span className="text-cyan-300 opacity-50">•</span>
+                    <SiTypescript className="text-2xl text-blue-400" /> TYPESCRIPT <span className="text-cyan-300 opacity-50">•</span>
+                    <SiFramer className="text-2xl text-white" /> FRAMER MOTION <span className="text-cyan-300 opacity-50">•</span>
+                    <SiThreedotjs className="text-2xl text-white" /> THREE.JS <span className="text-cyan-300 opacity-50">•</span>
                   </div>
                 </motion.div>
               </div>
