@@ -76,14 +76,14 @@ export default function Hero() {
 
           <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-white leading-[1.05] tracking-tighter drop-shadow-sm">
             Frontend <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-primary animate-text-shimmer bg-[length:200%_auto]">
+            <span className="text-5xl md:text-6xl lg:text-[5.5rem] text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-primary animate-text-shimmer bg-[length:200%_auto]">
               <TypingText fullText="Developer." />
             </span>
             <motion.span 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ repeat: Infinity, duration: 0.8, repeatType: "reverse" }}
-              className="inline-block text-cyan-400 ml-1"
+              className="inline-block text-cyan-400 ml-1 text-5xl md:text-6xl lg:text-[5.5rem]"
               style={{ WebkitTextFillColor: '#22d3ee' }}
             >
               |
