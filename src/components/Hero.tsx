@@ -40,7 +40,7 @@ const TypingText = ({ fullText }: { fullText: string }) => {
 
 export default function Hero() {
   return (
-    <section className="relative h-screen min-h-[650px] flex items-center pt-20 lg:pt-24 overflow-hidden bg-[#050505]">
+    <section className="relative h-screen flex items-center pt-20 lg:pt-24 overflow-hidden bg-[#050505]">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px] bg-primary/20 rounded-full blur-[100px] opacity-60 pointer-events-none"></div>
 
