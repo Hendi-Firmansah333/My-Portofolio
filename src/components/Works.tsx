@@ -1,6 +1,23 @@
+import Image from "next/image";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+
 interface WorksProps {
   hideHeader?: boolean;
 }
+
+const projects = [
+  {
+    id: "innovation4force",
+    title: "Innovation 4 Force",
+    description: "An international IT competition website featuring global tech synergy, designed with modern UI/UX principles for showcasing Web Application development challenges.",
+    image: "/img/projects/i4force.jpg",
+    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+    links: {
+      web: "https://i4force.web.id/",
+      github: "https://github.com/Hendi-Firmansah333/Web_Innovation4force"
+    }
+  }
+];
 
 export default function Works({ hideHeader = false }: WorksProps) {
   return (
@@ -13,55 +30,64 @@ export default function Works({ hideHeader = false }: WorksProps) {
                 <span className="w-8 h-[2px] bg-primary block"></span>
                 Selected Works
               </h2>
-              <p className="text-slate-400 max-w-md">Recent projects demonstrating my skills.</p>
+              <p className="text-slate-400 max-w-md">Recent projects demonstrating my frontend expertise.</p>
             </div>
           </div>
         )}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="group relative rounded-3xl overflow-hidden glass-card transition-all duration-300 hover:-translate-y-2">
-            <div className="aspect-video w-full overflow-hidden bg-slate-800 flex items-center justify-center">
-              <span className="material-symbols-outlined text-6xl text-slate-600">
-                restaurant_menu
-              </span>
-            </div>
-            <div className="p-8">
-              <div className="flex gap-2 mb-4">
-                <span className="px-3 py-1 text-xs font-semibold rounded-full bg-primary/20 text-primary border border-primary/20">
-                  E-Commerce
-                </span>
-                <span className="px-3 py-1 text-xs font-semibold rounded-full bg-white/5 text-slate-300 border border-white/10">
-                  Laravel
-                </span>
+          {projects.map((project) => (
+            <div key={project.id} className="group relative rounded-3xl overflow-hidden glass-card transition-all duration-300 hover:-translate-y-2 flex flex-col">
+              <div className="aspect-video w-full overflow-hidden bg-slate-900 relative">
+                <Image 
+                  src={project.image} 
+                  alt={project.title} 
+                  fill 
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                
+                {/* Hover Overlay with Links */}
+                <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                  {project.links.web && (
+                    <a href={project.links.web} target="_blank" rel="noopener noreferrer" className="p-3 bg-white/10 hover:bg-primary hover:text-white text-slate-200 rounded-full transition-colors backdrop-blur-md border border-white/10" title="Visit Website">
+                      <FaExternalLinkAlt className="text-lg" />
+                    </a>
+                  )}
+                  {project.links.github && (
+                    <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="p-3 bg-white/10 hover:bg-slate-700 hover:text-white text-slate-200 rounded-full transition-colors backdrop-blur-md border border-white/10" title="Source Code">
+                      <FaGithub className="text-lg" />
+                    </a>
+                  )}
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                Kelanting Food
-              </h3>
-              <p className="text-slate-400 mb-6 line-clamp-2">
-                A food e-commerce website with branding, product catalog, and footer design.
-              </p>
-            </div>
-          </div>
-          <div className="group relative rounded-3xl overflow-hidden glass-card transition-all duration-300 hover:-translate-y-2">
-            <div className="aspect-video w-full overflow-hidden bg-slate-800 flex items-center justify-center">
-              <span className="material-symbols-outlined text-6xl text-slate-600">
-                smart_toy
-              </span>
-            </div>
-            <div className="p-8">
-              <div className="flex gap-2 mb-4">
-                <span className="px-3 py-1 text-xs font-semibold rounded-full bg-purple-500/20 text-purple-400 border border-purple-500/20">
-                  AI Event
-                </span>
+              <div className="p-8 flex flex-col flex-grow">
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map(tag => (
+                    <span key={tag} className="px-3 py-1 text-xs font-semibold rounded-full bg-primary/10 text-cyan-400 border border-primary/20">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-slate-400 mb-6 flex-grow">
+                  {project.description}
+                </p>
+                <div className="flex items-center gap-4 mt-auto">
+                  {project.links.web && (
+                    <a href={project.links.web} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-300 hover:text-primary transition-colors flex items-center gap-2 font-medium">
+                      <FaExternalLinkAlt className="text-xs" /> Live Demo
+                    </a>
+                  )}
+                  {project.links.github && (
+                    <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-300 hover:text-white transition-colors flex items-center gap-2 font-medium">
+                      <FaGithub className="text-xs" /> Source
+                    </a>
+                  )}
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                Gemini AI Workshop
-              </h3>
-              <p className="text-slate-400 mb-6 line-clamp-2">
-                Event organization and digital materials for an AI productivity workshop at
-                Polinela.
-              </p>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
