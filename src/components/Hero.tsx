@@ -11,10 +11,9 @@ const Lanyard3D = dynamic(() => import("@/components/3d/LanyardCard"), { ssr: fa
 const CursorGrid = dynamic(() => import("@/components/animations/CursorGrid"), { ssr: false });
 const SpecularButton = dynamic(() => import("@/components/animations/SpecularButton"), { ssr: false });
 
-export default function Hero() {
+const TypingText = ({ fullText }: { fullText: string }) => {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const fullText = "Firmansah.";
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
@@ -34,8 +33,12 @@ export default function Hero() {
     }
 
     return () => clearTimeout(timeout);
-  }, [text, isDeleting]);
+  }, [text, isDeleting, fullText]);
 
+  return <>{text}</>;
+};
+
+export default function Hero() {
   return (
     <section className="relative h-screen flex items-center overflow-hidden bg-[#050505]">
       {/* Background Glow */}
@@ -74,7 +77,7 @@ export default function Hero() {
           <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-white leading-[1.05] tracking-tighter drop-shadow-sm">
             Hendi <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-primary animate-text-shimmer bg-[length:200%_auto]">
-              {text}
+              <TypingText fullText="Firmansah." />
             </span>
             <motion.span 
               initial={{ opacity: 0 }}
