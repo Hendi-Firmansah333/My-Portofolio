@@ -91,7 +91,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-slate-400 text-lg md:text-xl max-w-2xl leading-relaxed font-light mt-4">
-            Crafting immersive digital experiences through interactive <strong className="text-slate-200">UI</strong>, <strong className="text-slate-200">WebGL</strong>, and modern frontend architectures. Bringing concepts to life with elegant code and seamless performance.
+            A passionate <strong className="text-slate-200">Frontend Developer</strong> dedicated to crafting immersive digital experiences. I specialize in building interactive <strong className="text-slate-200">UI</strong> and modern web applications, bringing concepts to life with elegant code and seamless performance.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
