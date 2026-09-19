@@ -96,7 +96,7 @@ export default function About() {
                 <Image
                   alt="Hendi Firmansah"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
-                  src="/img/person.png"
+                  src="/img/person-frontend.png"
                   width={400}
                   height={500}
                 />

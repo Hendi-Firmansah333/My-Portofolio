@@ -54,7 +54,7 @@ export default function LanyardCard({
   gravity = [0, -40, 0],
   fov = 25,
   transparent = true,
-  frontImage = "/img/person.png",
+  frontImage = "/img/person-frontend.png",
   backImage = "/img/back_id_card.png",
   imageFit = 'cover',
   lanyardImage = "/img/custom_lanyard.png",
