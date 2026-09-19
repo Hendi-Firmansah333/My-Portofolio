@@ -115,7 +115,7 @@ export default function About() {
                   transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
                   className="absolute -left-2 sm:-left-4 bottom-20 bg-slate-900/80 backdrop-blur-md p-2 sm:p-3 rounded-xl sm:rounded-2xl border border-white/10 shadow-xl"
                 >
-                  <SiLaravel className="text-2xl sm:text-3xl text-red-500" />
+                  <SiNextdotjs className="text-2xl sm:text-3xl text-white" />
                 </motion.div>
               </div>
             </motion.div>
