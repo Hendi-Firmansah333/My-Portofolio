@@ -271,7 +271,11 @@ function Band({
       curve.points[1].copy(getLerped(j2.current));
       curve.points[2].copy(getLerped(j1.current));
       curve.points[3].copy(fixed.current.translation());
-      band.current.geometry.setPoints(curve.getPoints(isMobile ? 16 : 32));
+      
+      // Prevent NaN geometry errors when points overlap on first frame
+      if (curve.points[0].distanceTo(curve.points[3]) > 0.1) {
+        band.current.geometry.setPoints(curve.getPoints(isMobile ? 16 : 32));
+      }
       ang.copy(card.current.angvel());
       rot.copy(card.current.rotation());
       card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z }, true);
