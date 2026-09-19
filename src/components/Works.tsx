@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt, FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { SiLaravel, SiReact, SiTailwindcss, SiTypescript } from "react-icons/si";
+import { SiLaravel, SiReact, SiTailwindcss, SiVite } from "react-icons/si";
 
 interface WorksProps {
   hideHeader?: boolean;
@@ -17,8 +17,8 @@ const projects = [
     image: "/img/projects/i4force.jpeg",
     techStacks: [
       { category: "BACKEND", name: "LARAVEL 11 / PHP 8.3+", bg: "bg-[#FF2D20]", text: "text-white", icon: SiLaravel },
-      { category: "FRONTEND", name: "REACT 19 + VITE", bg: "bg-[#61DAFB]", text: "text-slate-900", icon: SiReact },
-      { category: "STYLING", name: "TAILWIND CSS 4", bg: "bg-[#06B6D4]", text: "text-white", icon: SiTailwindcss }
+      { category: "FRONTEND", name: "REACT 19 + VITE", bg: "bg-[#61DAFB]", text: "text-slate-900", icon: SiReact, iconColor: "text-cyan-400" },
+      { category: "STYLING", name: "TAILWIND CSS 4", bg: "bg-[#06B6D4]", text: "text-white", icon: SiTailwindcss, iconColor: "text-cyan-400" }
     ],
     links: {
       web: "https://i4force.web.id/",
@@ -31,9 +31,9 @@ const projects = [
     description: "Professional serverless image cropping platform. Generate Instagram grids, seamless carousels, and super HD panoramas directly in your browser in seconds.",
     image: "/img/projects/gridcut.jpeg",
     techStacks: [
-      { category: "FRONTEND", name: "REACT 19 + VITE", bg: "bg-[#61DAFB]", text: "text-slate-900", icon: SiReact },
-      { category: "STYLING", name: "TAILWIND CSS", bg: "bg-[#06B6D4]", text: "text-white", icon: SiTailwindcss },
-      { category: "CORE", name: "TYPESCRIPT", bg: "bg-[#3178C6]", text: "text-white", icon: SiTypescript }
+      { category: "REACT", name: "VITE", bg: "bg-[#A855F7]", text: "text-white", icon: SiReact, iconColor: "text-cyan-400", rightIcon: SiVite, rightIconColor: "text-yellow-300" },
+      { category: "STYLING", name: "GLASSMORPHISM UI", bg: "bg-[#00E5FF]", text: "text-slate-900" },
+      { category: "LICENSE", name: "MIT", bg: "bg-[#4ADE80]", text: "text-slate-900" }
     ],
     links: {
       web: "https://www.gridcut-pro.web.id/",
@@ -104,14 +104,16 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
         {/* Horizontal Scrolling Tech Badges */}
         <div className="flex flex-nowrap overflow-x-auto gap-2 mb-4 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {project.techStacks.map((tech, idx) => {
-            const Icon = tech.icon;
+            const LeftIcon = tech.icon;
+            const RightIcon = tech.rightIcon;
             return (
               <div key={idx} className="flex shrink-0 text-[9px] font-bold tracking-wider uppercase rounded-sm overflow-hidden border border-white/10 shadow-sm">
                 <div className="bg-slate-700/80 text-slate-200 px-2 py-1 flex items-center gap-1.5">
-                  <Icon className="text-[10px]" />
+                  {LeftIcon && <LeftIcon className={`text-[10px] ${tech.iconColor || ''}`} />}
                   {tech.category}
                 </div>
-                <div className={`${tech.bg} ${tech.text} px-2 py-1 flex items-center`}>
+                <div className={`${tech.bg} ${tech.text} px-2 py-1 flex items-center gap-1.5`}>
+                  {RightIcon && <RightIcon className={`text-[10px] ${tech.rightIconColor || ''}`} />}
                   {tech.name}
                 </div>
               </div>
