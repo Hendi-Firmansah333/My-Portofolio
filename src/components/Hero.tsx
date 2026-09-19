@@ -47,14 +47,14 @@ export default function Hero() {
         >
 
           <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-white leading-[1.05] tracking-tighter drop-shadow-sm">
-            Fullstack <br className="hidden md:block" />
+            Hendi <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-primary animate-text-shimmer bg-[length:200%_auto]">
-              Developer.
+              Firmansah.
             </span>
           </h1>
 
           <p className="text-slate-400 text-lg md:text-xl max-w-lg leading-relaxed font-light mt-2">
-            Crafting immersive digital experiences through interactive <strong className="text-slate-200">UI</strong>, <strong className="text-slate-200">WebGL</strong>, and modern frontend architectures. Bringing concepts to life with elegant code and seamless performance.
+            A passionate <strong className="text-slate-200">Frontend Developer</strong> crafting immersive digital experiences. I specialize in building interactive <strong className="text-slate-200">UI</strong> and modern web applications, bringing concepts to life with elegant code and seamless performance.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
