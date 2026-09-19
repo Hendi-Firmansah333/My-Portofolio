@@ -42,7 +42,7 @@ export default function Works({ hideHeader = false }: WorksProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project) => (
             <div key={project.id} className="group relative rounded-2xl overflow-hidden glass-card transition-all duration-300 hover:-translate-y-2 flex flex-col border border-white/5">
-              <div className="aspect-[4/3] w-full overflow-hidden bg-slate-900 relative">
+              <div className="aspect-video w-full overflow-hidden bg-slate-900 relative">
                 <Image 
                   src={project.image} 
                   alt={project.title} 
@@ -65,17 +65,18 @@ export default function Works({ hideHeader = false }: WorksProps) {
                 </div>
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors truncate">
                   {project.title}
                 </h3>
                 
                 <hr className="border-white/10 mb-4" />
                 
-                <div className="flex flex-wrap gap-2 mb-4">
+                {/* Horizontal Scrolling Tech Badges */}
+                <div className="flex flex-nowrap overflow-x-auto gap-2 mb-4 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                   {project.techStacks.map((tech, idx) => {
                     const Icon = tech.icon;
                     return (
-                      <div key={idx} className="flex text-[9px] font-bold tracking-wider uppercase rounded-sm overflow-hidden border border-white/10 shadow-sm">
+                      <div key={idx} className="flex shrink-0 text-[9px] font-bold tracking-wider uppercase rounded-sm overflow-hidden border border-white/10 shadow-sm">
                         <div className="bg-slate-700/80 text-slate-200 px-2 py-1 flex items-center gap-1.5">
                           <Icon className="text-[10px]" />
                           {tech.category}
@@ -88,7 +89,7 @@ export default function Works({ hideHeader = false }: WorksProps) {
                   })}
                 </div>
                 
-                <p className="text-slate-300 text-sm mb-5 flex-grow line-clamp-4 leading-relaxed">
+                <p className="text-slate-300 text-sm mb-5 flex-grow line-clamp-2 leading-relaxed">
                   {project.description}
                 </p>
                 <div className="flex items-center gap-4 mt-auto pt-4 border-t border-white/5">
