@@ -12,7 +12,7 @@ interface WorksProps {
 const projects = [
   {
     id: "innovation4force",
-    title: "🚀 Innovation 4 Force Competition",
+    title: "Innovation 4 Force",
     description: "Innovation 4 Force is a modern full-stack web platform designed to manage competition registrations, event timelines, guidebooks, judges, sponsors, and an interactive centralized administration dashboard.",
     image: "/img/projects/i4force.jpeg",
     techStacks: [
@@ -80,7 +80,7 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
         </div>
       </div>
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors truncate">
           {project.title}
         </h3>
         
