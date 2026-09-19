@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt, FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { SiLaravel, SiReact, SiTailwindcss } from "react-icons/si";
+import { SiLaravel, SiReact, SiTailwindcss, SiTypescript } from "react-icons/si";
 
 interface WorksProps {
   hideHeader?: boolean;
@@ -23,6 +23,21 @@ const projects = [
     links: {
       web: "https://i4force.web.id/",
       github: "https://github.com/Hendi-Firmansah333/Web_Innovation4force"
+    }
+  },
+  {
+    id: "gridcutpro",
+    title: "GridCut Studio Pro",
+    description: "Professional serverless image cropping platform. Generate Instagram grids, seamless carousels, and super HD panoramas directly in your browser in seconds.",
+    image: "/img/projects/gridcut.jpeg",
+    techStacks: [
+      { category: "FRONTEND", name: "REACT 19 + VITE", bg: "bg-[#61DAFB]", text: "text-slate-900", icon: SiReact },
+      { category: "STYLING", name: "TAILWIND CSS", bg: "bg-[#06B6D4]", text: "text-white", icon: SiTailwindcss },
+      { category: "CORE", name: "TYPESCRIPT", bg: "bg-[#3178C6]", text: "text-white", icon: SiTypescript }
+    ],
+    links: {
+      web: "https://www.gridcut-pro.web.id/",
+      github: "https://github.com/Hendi-Firmansah333/GridCut-Studio-Pro"
     }
   }
 ];
