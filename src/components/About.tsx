@@ -64,7 +64,7 @@ export default function About() {
   };
 
   return (
-    <section className="py-24 relative z-10 overflow-hidden scroll-mt-24" id="about">
+    <section className="min-h-screen flex items-center py-20 lg:py-0 relative z-10 overflow-hidden" id="about">
       {/* Background Decorative Elements */}
       <div className="absolute top-40 right-10 w-72 h-72 bg-primary/10 rounded-full blur-[80px] pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
@@ -75,7 +75,7 @@ export default function About() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2, margin: "0px 0px -15% 0px" }}
-          className="flex flex-col lg:flex-row gap-16 items-center relative z-10"
+          className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-center relative z-10"
         >
           {/* Left Side: Floating Image Card */}
           <motion.div 
@@ -86,7 +86,7 @@ export default function About() {
             <motion.div 
               animate={{ y: [-10, 10, -10] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="relative aspect-[4/5] w-full max-w-[380px] mx-auto rounded-3xl p-1 overflow-hidden shadow-[0_0_40px_rgba(19,91,236,0.2)]"
+              className="relative aspect-[4/5] w-full max-w-[320px] mx-auto rounded-3xl p-1 overflow-hidden shadow-[0_0_40px_rgba(19,91,236,0.2)]"
             >
               {/* Rotating Gradient Background for Border Effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary via-cyan-400 to-purple-600 opacity-50 group-hover:opacity-100 animate-[spin_8s_linear_infinite]" />
@@ -129,11 +129,11 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-2 flex items-center gap-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
                 About Me.
               </h2>
-              <motion.div variants={lineVariants} className="h-1 w-20 bg-gradient-to-r from-primary to-cyan-400 rounded-full" />
+              <motion.div variants={lineVariants} className="h-1 w-16 bg-gradient-to-r from-primary to-cyan-400 rounded-full" />
             </motion.div>
 
             {/* Staggered Paragraphs */}
-            <motion.div variants={containerVariants} className="space-y-4 text-slate-300 text-base md:text-lg leading-relaxed font-light">
+            <motion.div variants={containerVariants} className="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed font-light">
               <motion.p variants={textVariants}>
                 Hello! I'm <strong className="text-white font-bold">Hendi Firmansah</strong>, an undergraduate student at <strong className="text-white font-bold">Politeknik Negeri Lampung</strong> and a passionate <strong className="text-cyan-400 font-bold">Frontend Developer</strong> based in Indonesia. I specialize in crafting immersive, highly interactive, and visually stunning web experiences.
               </motion.p>
@@ -143,8 +143,8 @@ export default function About() {
             </motion.div>
 
             {/* Animated Police Line / Tech Stack Ticker */}
-            <motion.div variants={tickerVariants} className="mt-8 relative w-full overflow-hidden rounded-xl h-24 flex items-center justify-center">
-              <div className="absolute w-[120%] bg-primary text-white border-y-4 border-cyan-300 py-3 transform -rotate-3 shadow-[0_0_30px_rgba(19,91,236,0.4)]">
+            <motion.div variants={tickerVariants} className="mt-4 relative w-full overflow-hidden rounded-xl h-16 md:h-20 flex items-center justify-center">
+              <div className="absolute w-[120%] bg-primary text-white border-y-4 border-cyan-300 py-2 transform -rotate-2 shadow-[0_0_30px_rgba(19,91,236,0.4)]">
                 
                 {/* Diagonal stripes overlay (like police tape) */}
                 <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'repeating-linear-gradient(-45deg, transparent, transparent 15px, #000 15px, #000 30px)' }}></div>
