@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { SiReact, SiNextdotjs, SiTailwindcss, SiTypescript, SiNodedotjs, SiThreedotjs, SiVite } from "react-icons/si";
@@ -11,6 +12,23 @@ const CursorGrid = dynamic(() => import("@/components/animations/CursorGrid"), {
 const SpecularButton = dynamic(() => import("@/components/animations/SpecularButton"), { ssr: false });
 
 export default function Hero() {
+  const [text, setText] = useState("");
+  const fullText = "Firmansah.";
+
+  useEffect(() => {
+    let i = 0;
+    const typingInterval = setInterval(() => {
+      if (i < fullText.length) {
+        setText(fullText.slice(0, i + 1));
+        i++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 150);
+    
+    return () => clearInterval(typingInterval);
+  }, []);
+
   return (
     <section className="relative h-screen flex items-center overflow-hidden bg-[#050505]">
       {/* Background Glow */}
@@ -49,8 +67,16 @@ export default function Hero() {
           <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-white leading-[1.05] tracking-tighter drop-shadow-sm">
             Hendi <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-primary animate-text-shimmer bg-[length:200%_auto]">
-              Firmansah.
+              {text}
             </span>
+            <motion.span 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ repeat: Infinity, duration: 0.8, repeatType: "reverse" }}
+              className="inline-block font-light ml-1"
+            >
+              |
+            </motion.span>
           </h1>
 
           <p className="text-slate-400 text-lg md:text-xl max-w-lg leading-relaxed font-light mt-2">
