@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, Noto_Sans } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -35,9 +36,11 @@ export default function RootLayout({
         <div className="fixed inset-0 z-0 pointer-events-none bg-[linear-gradient(to_right,rgba(34,211,238,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(34,211,238,0.04)_1px,transparent_1px)] bg-[size:70px_70px]"></div>
 
         {/* Page Content */}
-        <div className="relative z-10 flex flex-col min-h-screen w-full">
-          {children}
-        </div>
+        <SmoothScroll>
+          <div className="relative z-10 flex flex-col min-h-screen w-full">
+            {children}
+          </div>
+        </SmoothScroll>
       </body>
     </html>
   );
