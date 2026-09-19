@@ -34,10 +34,10 @@ export default function Works({ hideHeader = false }: WorksProps) {
             </div>
           </div>
         )}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project) => (
-            <div key={project.id} className="group relative rounded-3xl overflow-hidden glass-card transition-all duration-300 hover:-translate-y-2 flex flex-col">
-              <div className="aspect-video w-full overflow-hidden bg-slate-900 relative">
+            <div key={project.id} className="group relative rounded-2xl overflow-hidden glass-card transition-all duration-300 hover:-translate-y-2 flex flex-col border border-white/5">
+              <div className="aspect-[4/3] w-full overflow-hidden bg-slate-900 relative">
                 <Image 
                   src={project.image} 
                   alt={project.title} 
@@ -46,42 +46,42 @@ export default function Works({ hideHeader = false }: WorksProps) {
                 />
                 
                 {/* Hover Overlay with Links */}
-                <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                   {project.links.web && (
-                    <a href={project.links.web} target="_blank" rel="noopener noreferrer" className="p-3 bg-white/10 hover:bg-primary hover:text-white text-slate-200 rounded-full transition-colors backdrop-blur-md border border-white/10" title="Visit Website">
-                      <FaExternalLinkAlt className="text-lg" />
+                    <a href={project.links.web} target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white/10 hover:bg-primary hover:text-white text-slate-200 rounded-full transition-colors backdrop-blur-md border border-white/10 shadow-lg" title="Visit Website">
+                      <FaExternalLinkAlt className="text-sm" />
                     </a>
                   )}
                   {project.links.github && (
-                    <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="p-3 bg-white/10 hover:bg-slate-700 hover:text-white text-slate-200 rounded-full transition-colors backdrop-blur-md border border-white/10" title="Source Code">
-                      <FaGithub className="text-lg" />
+                    <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white/10 hover:bg-slate-700 hover:text-white text-slate-200 rounded-full transition-colors backdrop-blur-md border border-white/10 shadow-lg" title="Source Code">
+                      <FaGithub className="text-sm" />
                     </a>
                   )}
                 </div>
               </div>
-              <div className="p-8 flex flex-col flex-grow">
-                <div className="flex flex-wrap gap-2 mb-4">
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="flex flex-wrap gap-2 mb-3">
                   {project.tags.map(tag => (
-                    <span key={tag} className="px-3 py-1 text-xs font-semibold rounded-full bg-primary/10 text-cyan-400 border border-primary/20">
+                    <span key={tag} className="px-2.5 py-1 text-[10px] font-bold tracking-wider uppercase rounded-full bg-primary/10 text-cyan-400 border border-primary/20">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-slate-400 mb-6 flex-grow">
+                <p className="text-slate-400 text-sm mb-5 flex-grow line-clamp-3">
                   {project.description}
                 </p>
-                <div className="flex items-center gap-4 mt-auto">
+                <div className="flex items-center gap-4 mt-auto pt-4 border-t border-white/5">
                   {project.links.web && (
-                    <a href={project.links.web} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-300 hover:text-primary transition-colors flex items-center gap-2 font-medium">
-                      <FaExternalLinkAlt className="text-xs" /> Live Demo
+                    <a href={project.links.web} target="_blank" rel="noopener noreferrer" className="text-xs text-slate-300 hover:text-primary transition-colors flex items-center gap-1.5 font-semibold">
+                      <FaExternalLinkAlt /> Live Demo
                     </a>
                   )}
                   {project.links.github && (
-                    <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="text-sm text-slate-300 hover:text-white transition-colors flex items-center gap-2 font-medium">
-                      <FaGithub className="text-xs" /> Source
+                    <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="text-xs text-slate-300 hover:text-white transition-colors flex items-center gap-1.5 font-semibold">
+                      <FaGithub /> Source
                     </a>
                   )}
                 </div>
