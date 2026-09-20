@@ -267,15 +267,38 @@ function Band({
         const clampedDistance = Math.max(0.1, Math.min(1, lerped.distanceTo(ref.current.translation())));
         lerped.lerp(ref.current.translation(), delta * (minSpeed + clampedDistance * (maxSpeed - minSpeed)));
       });
-      curve.points[0].copy(j3.current.translation());
-      curve.points[1].copy(getLerped(j2.current));
-      curve.points[2].copy(getLerped(j1.current));
-      curve.points[3].copy(fixed.current.translation());
       
-      // Prevent NaN geometry errors when points overlap on first frame
-      if (curve.points[0].distanceTo(curve.points[3]) > 0.1) {
-        band.current.geometry.setPoints(curve.getPoints(isMobile ? 16 : 32));
+      const p0 = j3.current.translation();
+      const p1 = getLerped(j2.current);
+      const p2 = getLerped(j1.current);
+      const p3 = fixed.current.translation();
+
+      // Guard against Rapier physics returning NaN during initialization
+      if (isNaN(p0.x) || isNaN(p1.x) || isNaN(p2.x) || isNaN(p3.x)) return;
+
+      curve.points[0].copy(p0);
+      curve.points[1].copy(p1);
+      curve.points[2].copy(p2);
+      curve.points[3].copy(p3);
+      
+      // Prevent NaN geometry errors when points overlap on first frame or physics bugs
+      try {
+        const pts = curve.getPoints(isMobile ? 16 : 32);
+        // Ensure no NaN values in the generated points
+        let hasNaN = false;
+        for (let i = 0; i < pts.length; i++) {
+          if (isNaN(pts[i].x) || isNaN(pts[i].y) || isNaN(pts[i].z)) {
+            hasNaN = true;
+            break;
+          }
+        }
+        if (!hasNaN) {
+          band.current.geometry.setPoints(pts);
+        }
+      } catch (error) {
+        // Silently ignore meshline errors during unstable physics frames
       }
+
       ang.copy(card.current.angvel());
       rot.copy(card.current.rotation());
       card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z }, true);
