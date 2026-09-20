@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { SiReact, SiNextdotjs, SiTailwindcss, SiTypescript, SiFramer, SiThreedotjs, SiHtml5, SiCss3 } from "react-icons/si";
+import { SiReact, SiNextdotjs, SiTailwindcss, SiTypescript, SiFramer, SiThreedotjs, SiHtml5 } from "react-icons/si";
+import { FaCss3Alt } from "react-icons/fa";
 
 export default function About() {
-  const containerVariants = {
+  const containerVariants: any = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -13,7 +14,7 @@ export default function About() {
     },
   };
 
-  const imageVariants = {
+  const imageVariants: any = {
     hidden: { opacity: 0, scale: 0.9, filter: "blur(10px)", y: 40 },
     visible: { 
       opacity: 1, 
@@ -24,7 +25,7 @@ export default function About() {
     },
   };
 
-  const titleVariants = {
+  const titleVariants: any = {
     hidden: { opacity: 0, y: 30, filter: "blur(8px)" },
     visible: { 
       opacity: 1, 
@@ -34,7 +35,7 @@ export default function About() {
     },
   };
 
-  const textVariants = {
+  const textVariants: any = {
     hidden: { opacity: 0, y: 20, filter: "blur(5px)" },
     visible: { 
       opacity: 1, 
@@ -44,7 +45,7 @@ export default function About() {
     },
   };
   
-  const lineVariants = {
+  const lineVariants: any = {
     hidden: { scaleX: 0, opacity: 0, originX: 0 },
     visible: { 
       scaleX: 1, 
@@ -53,7 +54,7 @@ export default function About() {
     },
   };
   
-  const tickerVariants = {
+  const tickerVariants: any = {
     hidden: { opacity: 0, y: 50, scale: 0.95 },
     visible: { 
       opacity: 1, 

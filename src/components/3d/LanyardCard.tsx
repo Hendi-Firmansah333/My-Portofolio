@@ -227,7 +227,12 @@ function Band({
   
   const [curve] = useState(
     () =>
-      new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()])
+      new THREE.CatmullRomCurve3([
+        new THREE.Vector3(0, 0, 0),
+        new THREE.Vector3(0, 1, 0),
+        new THREE.Vector3(0, 2, 0),
+        new THREE.Vector3(0, 3, 0)
+      ])
   );
   const [dragged, drag] = useState<false | THREE.Vector3>(false);
   const [hovered, hover] = useState(false);
@@ -248,6 +253,17 @@ function Band({
       };
     }
   }, [hovered, dragged]);
+
+  useEffect(() => {
+    if (band.current) {
+      try {
+        // Initialize geometry with valid curve points to prevent NaN bounding sphere errors on first render
+        band.current.geometry.setPoints(curve.getPoints(isMobile ? 16 : 32));
+      } catch (error) {
+        // Silently ignore
+      }
+    }
+  }, [curve, isMobile]);
 
   useFrame((state, delta) => {
     if (dragged && typeof dragged !== 'boolean') {
