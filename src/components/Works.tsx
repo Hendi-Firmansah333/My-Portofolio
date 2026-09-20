@@ -83,9 +83,7 @@ export default function Works({ hideHeader = false }: WorksProps) {
     }
   };
 
-  const topProjects = projects.slice(0, 3);
-  const sliderProjects = projects.slice(3);
-  const showSlider = sliderProjects.length > 0;
+  const showSliderControls = projects.length > 3;
 
   return (
     <section className={`${hideHeader ? 'py-4' : 'py-24'} relative z-10`} id="work">
@@ -102,79 +100,42 @@ export default function Works({ hideHeader = false }: WorksProps) {
           </div>
         )}
 
-        {/* Top 3 Projects (Grid Layout) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {topProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
-
-        {/* Additional Projects (Slider Layout) */}
-        {showSlider && (
-          <div className="relative mt-16 pt-16 border-t border-white/5">
-            <div className="flex justify-between items-end mb-8">
-              <div>
-                <h3 className="text-2xl font-bold flex items-center gap-3 text-slate-200">
-                  <span className="w-6 h-[2px] bg-primary block"></span>
-                  More Projects
-                </h3>
+        <div className="relative">
+          <div 
+            ref={scrollRef}
+            className={`flex overflow-x-auto snap-x snap-mandatory gap-6 lg:gap-8 pb-4 scrollbar-hide ${!showSliderControls ? 'flex-wrap lg:flex-nowrap' : ''}`}
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {projects.map((project) => (
+              <div 
+                key={project.id} 
+                className="snap-start shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333333%-21.33px)] h-auto flex flex-col"
+              >
+                <ProjectCard project={project} />
               </div>
-              
-              {/* Desktop Slider Navigation */}
-              {sliderProjects.length > 1 && (
-                <div className="hidden sm:flex items-center gap-3">
-                  <button 
-                    onClick={() => scroll("left")}
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-primary text-slate-300 hover:text-white border border-white/10 hover:border-primary transition-all duration-300 backdrop-blur-md"
-                    aria-label="Previous project"
-                  >
-                    <FaChevronLeft className="text-sm -ml-0.5" />
-                  </button>
-                  <button 
-                    onClick={() => scroll("right")}
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-primary text-slate-300 hover:text-white border border-white/10 hover:border-primary transition-all duration-300 backdrop-blur-md"
-                    aria-label="Next project"
-                  >
-                    <FaChevronRight className="text-sm -mr-0.5" />
-                  </button>
-                </div>
-              )}
-            </div>
-
-            <div 
-              ref={scrollRef}
-              className="flex overflow-x-auto snap-x snap-mandatory gap-6 lg:gap-8 pb-4 scrollbar-hide"
-              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            >
-              {sliderProjects.map((project) => (
-                <div 
-                  key={project.id} 
-                  className="snap-start shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333333%-21.33px)] h-auto flex flex-col"
-                >
-                  <ProjectCard project={project} />
-                </div>
-              ))}
-            </div>
-
-            {/* Mobile Slider Navigation */}
-            {sliderProjects.length > 1 && (
-              <div className="flex sm:hidden justify-center items-center gap-6 mt-6">
-                <button 
-                  onClick={() => scroll("left")}
-                  className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-primary text-slate-300 hover:text-white border border-white/10 hover:border-primary transition-all duration-300 shadow-lg"
-                >
-                  <FaChevronLeft className="text-lg -ml-1" />
-                </button>
-                <button 
-                  onClick={() => scroll("right")}
-                  className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-primary text-slate-300 hover:text-white border border-white/10 hover:border-primary transition-all duration-300 shadow-lg"
-                >
-                  <FaChevronRight className="text-lg -mr-1" />
-                </button>
-              </div>
-            )}
+            ))}
           </div>
-        )}
+
+          {/* Slider Navigation (Only shows if > 3 projects) */}
+          {showSliderControls && (
+            <div className="flex justify-center items-center gap-6 mt-8">
+              <button 
+                onClick={() => scroll("left")}
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-primary text-slate-300 hover:text-white border border-white/10 hover:border-primary transition-all duration-300 backdrop-blur-md shadow-lg"
+                aria-label="Previous project"
+              >
+                <FaChevronLeft className="text-lg -ml-1" />
+              </button>
+              <button 
+                onClick={() => scroll("right")}
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-primary text-slate-300 hover:text-white border border-white/10 hover:border-primary transition-all duration-300 backdrop-blur-md shadow-lg"
+                aria-label="Next project"
+              >
+                <FaChevronRight className="text-lg -mr-1" />
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
