@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
-import { FaGithub, FaExternalLinkAlt, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaChevronDown, FaChevronUp, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { SiLaravel, SiReact, SiTailwindcss, SiVite, SiFramer, SiNodedotjs, SiExpress, SiPython, SiStreamlit } from "react-icons/si";
 
 interface WorksProps {
@@ -73,9 +73,19 @@ const projects = [
 ];
 
 export default function Works({ hideHeader = false }: WorksProps) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollTo = direction === "left" ? scrollLeft - clientWidth : scrollLeft + clientWidth;
+      scrollRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
+    }
+  };
+
   return (
     <section className={`${hideHeader ? 'py-4' : 'py-24'} relative z-10`} id="work">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 overflow-hidden">
         {!hideHeader && (
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
@@ -87,10 +97,40 @@ export default function Works({ hideHeader = false }: WorksProps) {
             </div>
           </div>
         )}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
+        
+        <div className="relative">
+          <div 
+            ref={scrollRef}
+            className="flex overflow-x-auto snap-x snap-mandatory gap-6 lg:gap-8 pb-4 scrollbar-hide"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {projects.map((project) => (
+              <div 
+                key={project.id} 
+                className="w-full min-w-[100%] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-21px)] snap-center shrink-0"
+              >
+                <ProjectCard project={project} />
+              </div>
+            ))}
+          </div>
+          
+          {/* Slider Navigation */}
+          <div className="flex justify-center items-center gap-6 mt-8">
+            <button 
+              onClick={() => scroll("left")}
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-primary text-slate-300 hover:text-white border border-white/10 hover:border-primary transition-all duration-300 backdrop-blur-md shadow-lg"
+              aria-label="Previous project"
+            >
+              <FaChevronLeft className="text-lg -ml-1" />
+            </button>
+            <button 
+              onClick={() => scroll("right")}
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800/80 hover:bg-primary text-slate-300 hover:text-white border border-white/10 hover:border-primary transition-all duration-300 backdrop-blur-md shadow-lg"
+              aria-label="Next project"
+            >
+              <FaChevronRight className="text-lg -mr-1" />
+            </button>
+          </div>
         </div>
       </div>
     </section>
