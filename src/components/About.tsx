@@ -67,8 +67,8 @@ export default function About() {
   return (
     <section className="min-h-screen flex items-center py-20 lg:py-24 relative z-10 overflow-hidden scroll-mt-10" id="about">
       {/* Background Decorative Elements */}
-      <div className="absolute top-40 right-10 w-72 h-72 bg-primary/10 rounded-full blur-[80px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-40 right-10 w-72 h-72 bg-primary/10 rounded-full blur-[80px] pointer-events-none transform-gpu will-change-transform" />
+      <div className="absolute bottom-10 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none transform-gpu will-change-transform" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
