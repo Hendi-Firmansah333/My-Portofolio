@@ -107,7 +107,7 @@ export default function Works({ hideHeader = false }: WorksProps) {
             {projects.map((project) => (
               <div 
                 key={project.id} 
-                className="w-full min-w-[100%] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-21px)] snap-center shrink-0"
+                className="w-full min-w-[100%] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-21.33px)] snap-start shrink-0"
               >
                 <ProjectCard project={project} />
               </div>
