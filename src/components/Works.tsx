@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt, FaChevronDown, FaChevronUp, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { SiLaravel, SiReact, SiTailwindcss, SiVite, SiFramer, SiNodedotjs, SiExpress, SiPython, SiStreamlit } from "react-icons/si";
+import { SiLaravel, SiReact, SiTailwindcss, SiVite, SiFramer, SiNodedotjs, SiExpress, SiPython, SiStreamlit, SiMysql } from "react-icons/si";
 
 interface WorksProps {
   hideHeader?: boolean;
@@ -68,6 +68,21 @@ const projects = [
     links: {
       web: "https://struklyai.vercel.app/",
       github: "https://github.com/Alaika10/strukly_AI_UMKM"
+    }
+  },
+  {
+    id: "astech",
+    title: "Web ASTECH",
+    description: "Campus organization management platform for ASTECH. Designed to manage divisions, achievements, and student aspirations efficiently.",
+    image: "/img/projects/astech.jpeg",
+    techStacks: [
+      { category: "FRONTEND", name: "REACT + TAILWIND", bg: "bg-[#A855F7]", text: "text-white", icon: SiReact, iconColor: "text-cyan-400", rightIcon: SiTailwindcss },
+      { category: "BACKEND", name: "EXPRESS.JS", bg: "bg-[#22C55E]", text: "text-white", icon: SiExpress },
+      { category: "DATABASE", name: "MYSQL", bg: "bg-[#4479A1]", text: "text-white", icon: SiMysql }
+    ],
+    links: {
+      web: "https://astech-profile-zg3i.vercel.app/",
+      github: "https://github.com/RidhoNuril/web_profile_astech"
     }
   }
 ];
