@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt, FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { SiLaravel, SiReact, SiTailwindcss, SiVite, SiFramer } from "react-icons/si";
+import { SiLaravel, SiReact, SiTailwindcss, SiVite, SiFramer, SiNodedotjs, SiExpress, SiPython, SiStreamlit } from "react-icons/si";
 
 interface WorksProps {
   hideHeader?: boolean;
@@ -53,6 +53,21 @@ const projects = [
     links: {
       web: "https://www.jokilaporan.web.id/",
       github: "https://github.com/Hendi-Firmansah333/Joki-Laporan-SMK"
+    }
+  },
+  {
+    id: "struklyai",
+    title: "Strukly AI",
+    description: "AI-powered financial recording platform for MSMEs. Features Vision AI automation for extracting receipt data and a Python analytics dashboard.",
+    image: "/img/projects/strukly.jpeg",
+    techStacks: [
+      { category: "FRONTEND", name: "REACT + VITE", bg: "bg-[#A855F7]", text: "text-white", icon: SiReact, iconColor: "text-cyan-400", rightIcon: SiVite, rightIconColor: "text-yellow-300" },
+      { category: "BACKEND", name: "NODE.JS + EXPRESS", bg: "bg-[#22C55E]", text: "text-white", icon: SiNodedotjs, rightIcon: SiExpress },
+      { category: "ANALYTICS", name: "PYTHON + STREAMLIT", bg: "bg-[#EF4444]", text: "text-white", icon: SiPython, rightIcon: SiStreamlit }
+    ],
+    links: {
+      web: "https://struklyai.vercel.app/",
+      github: "https://github.com/Alaika10/strukly_AI_UMKM"
     }
   }
 ];
