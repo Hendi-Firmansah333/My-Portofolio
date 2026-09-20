@@ -5,11 +5,36 @@ import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt, FaChevronDown, FaChevronUp, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { SiLaravel, SiReact, SiTailwindcss, SiVite, SiFramer, SiNodedotjs, SiExpress, SiPython, SiStreamlit, SiMysql } from "react-icons/si";
 
+import { IconType } from "react-icons";
+
 interface WorksProps {
   hideHeader?: boolean;
 }
 
-const projects = [
+export interface TechStack {
+  category: string;
+  name: string;
+  bg: string;
+  text: string;
+  icon?: IconType;
+  iconColor?: string;
+  rightIcon?: IconType;
+  rightIconColor?: string;
+}
+
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  techStacks: TechStack[];
+  links: {
+    web: string;
+    github: string;
+  };
+}
+
+const projects: Project[] = [
   {
     id: "innovation4force",
     title: "Innovation 4 Force",
@@ -156,7 +181,7 @@ export default function Works({ hideHeader = false }: WorksProps) {
   );
 }
 
-function ProjectCard({ project }: { project: typeof projects[0] }) {
+function ProjectCard({ project }: { project: Project }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
