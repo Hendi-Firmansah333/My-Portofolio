@@ -334,7 +334,7 @@ function Band({
           </group>
         </RigidBody>
       </group>
-      <mesh ref={band} frustumCulled={false}>
+      <mesh ref={band} frustumCulled={false} raycast={() => null}>
         <meshLineGeometry />
         {/* @ts-ignore */}
         <meshLineMaterial
