@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt, FaChevronDown, FaChevronUp, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { SiLaravel, SiReact, SiTailwindcss, SiVite, SiFramer, SiNodedotjs, SiExpress, SiPython, SiStreamlit, SiMysql } from "react-icons/si";
+import { SiLaravel, SiReact, SiTailwindcss, SiVite, SiFramer, SiNodedotjs, SiExpress, SiPython, SiStreamlit, SiMysql, SiNestjs, SiNextdotjs, SiFlutter } from "react-icons/si";
 
 import { IconType } from "react-icons";
 
@@ -108,6 +108,21 @@ const projects: Project[] = [
     links: {
       web: "https://astech-profile-zg3i.vercel.app/",
       github: "https://github.com/RidhoNuril/web_profile_astech"
+    }
+  },
+  {
+    id: "prima",
+    title: "PRIMA (Humas App)",
+    description: "Public relations management application for Politeknik Negeri Lampung. Features live GPS monitoring for PR members, an interactive admin dashboard, and a mobile application.",
+    image: "/img/projects/prima.jpeg",
+    techStacks: [
+      { category: "FRONTEND", name: "NEXT.JS", bg: "bg-[#000000]", text: "text-white", icon: SiNextdotjs },
+      { category: "BACKEND", name: "NEST.JS", bg: "bg-[#E0234E]", text: "text-white", icon: SiNestjs },
+      { category: "MOBILE", name: "FLUTTER", bg: "bg-[#02569B]", text: "text-white", icon: SiFlutter }
+    ],
+    links: {
+      web: "#",
+      github: "https://github.com/Hendi-Firmansah333/Project-Humas-App"
     }
   }
 ];
