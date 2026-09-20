@@ -282,21 +282,13 @@ function Band({
       curve.points[3].copy(p3);
       
       // Prevent NaN geometry errors when points overlap on first frame or physics bugs
-      try {
-        const pts = curve.getPoints(isMobile ? 16 : 32);
-        // Ensure no NaN values in the generated points
-        let hasNaN = false;
-        for (let i = 0; i < pts.length; i++) {
-          if (isNaN(pts[i].x) || isNaN(pts[i].y) || isNaN(pts[i].z)) {
-            hasNaN = true;
-            break;
-          }
+      // MeshLineGeometry generates NaN internally if the curve length is too small.
+      if (curve.points[0].distanceTo(curve.points[3]) > 0.1) {
+        try {
+          band.current.geometry.setPoints(curve.getPoints(isMobile ? 16 : 32));
+        } catch (error) {
+          // Silently ignore meshline errors during unstable physics frames
         }
-        if (!hasNaN) {
-          band.current.geometry.setPoints(pts);
-        }
-      } catch (error) {
-        // Silently ignore meshline errors during unstable physics frames
       }
 
       ang.copy(card.current.angvel());
