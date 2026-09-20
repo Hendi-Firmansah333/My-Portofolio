@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt, FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { SiLaravel, SiReact, SiTailwindcss, SiVite } from "react-icons/si";
+import { SiLaravel, SiReact, SiTailwindcss, SiVite, SiFramer } from "react-icons/si";
 
 interface WorksProps {
   hideHeader?: boolean;
@@ -38,6 +38,21 @@ const projects = [
     links: {
       web: "https://www.gridcut-pro.web.id/",
       github: "https://github.com/Hendi-Firmansah333/GridCut-Studio-Pro"
+    }
+  },
+  {
+    id: "jokilaporan",
+    title: "Joki Laporan",
+    description: "A professional assignment assistance platform offering high-quality help with reports, papers, proposals, and presentations for students quickly and neatly.",
+    image: "/img/projects/jokilaporan.jpeg",
+    techStacks: [
+      { category: "FRONTEND", name: "REACT + VITE", bg: "bg-[#A855F7]", text: "text-white", icon: SiReact, iconColor: "text-cyan-400", rightIcon: SiVite, rightIconColor: "text-yellow-300" },
+      { category: "STYLING", name: "TAILWIND CSS 3", bg: "bg-[#06B6D4]", text: "text-white", icon: SiTailwindcss },
+      { category: "ANIMATION", name: "FRAMER MOTION", bg: "bg-[#0055FF]", text: "text-white", icon: SiFramer }
+    ],
+    links: {
+      web: "https://www.jokilaporan.web.id/",
+      github: "https://github.com/Hendi-Firmansah333/Joki-Laporan-SMK"
     }
   }
 ];
