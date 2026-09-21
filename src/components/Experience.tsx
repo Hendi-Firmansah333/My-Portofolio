@@ -33,7 +33,7 @@ const experiences = [
     id: 3,
     category: "Organisasi",
     period: "2024 — Present",
-    title: "Ketua Departemen Minat Bakat",
+    title: "Kadep Minat Bakat",
     subtitle: "HMJTI Politeknik Negeri Lampung",
     description: "Organisasi yang menaungi program studi dari jurusan Teknologi Informasi Politeknik Negeri Lampung. Bertanggung jawab memimpin departemen dalam mengembangkan potensi dan bakat mahasiswa.",
     icon: "groups",
