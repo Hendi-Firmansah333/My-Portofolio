@@ -280,22 +280,17 @@ function Band({
         curve.points[1].copy(getLerped(j2.current));
         curve.points[2].copy(getLerped(j1.current));
         curve.points[3].copy(fixed.current.translation());
-      }
-      
-      let linePoints = curve.getPoints(isMobile ? 16 : 32);
-      
-      // Filter out overlapping adjacent points and NaNs to prevent MeshLineGeometry crashes
-      linePoints = linePoints.filter((p, i) => {
-        if (Number.isNaN(p.x) || Number.isNaN(p.y) || Number.isNaN(p.z)) return false;
-        if (i === 0) return true;
-        return p.distanceTo(linePoints[i - 1]) > 0.001;
-      });
 
-      if (linePoints.length < 2) {
-        linePoints = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0.1, 0)];
+        // Ensure no adjacent control points perfectly overlap, which causes CatmullRomCurve3 to generate NaNs
+        for (let i = 1; i < 4; i++) {
+          if (curve.points[i].distanceTo(curve.points[i - 1]) < 0.01) {
+            curve.points[i].x += 0.01;
+            curve.points[i].y += 0.01;
+          }
+        }
       }
       
-      band.current.geometry.setPoints(linePoints);
+      band.current.geometry.setPoints(curve.getPoints(isMobile ? 16 : 32));
       ang.copy(card.current.angvel());
       rot.copy(card.current.rotation());
       card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z }, true);
