@@ -10,13 +10,77 @@ const experiences = [
   {
     id: 1,
     category: "Program",
-    period: "2025 — Present",
+    period: "2025 — 2026",
     title: "Google Student Ambassador",
-    subtitle: "Google Team",
-    description: "Selected as part of the Google Team. Gained in-depth experience and expertise in Gemini AI technologies, community leadership, and bridging the gap between students and Google technologies.",
+    subtitle: "Team Google",
+    description: "Berperan sebagai pelopor ambasador teknologi Google dan menjadi influencer bagi kampus Politeknik Negeri Lampung untuk mengedukasi teknologi Google serta mengadakan event.",
     icon: "smart_toy",
     color: "text-primary",
-    border: "border-l-primary/50"
+    border: "border-l-primary/50",
+    socials: [
+      { platform: "instagram", url: "https://www.instagram.com/googleindonesia/" },
+      { platform: "tiktok", url: "https://www.tiktok.com/@google" }
+    ]
+  },
+  {
+    id: 8,
+    category: "Program",
+    period: "2026 (6 Bulan)",
+    title: "Fullstack Developer Bootcamp",
+    subtitle: "DBS Foundation x Dicoding Indonesia",
+    description: "Program bootcamp intensif yang berfokus pada teknologi web, khususnya pengembangan aplikasi secara menyeluruh (Fullstack Developer).",
+    icon: "code",
+    color: "text-red-500",
+    border: "border-l-red-500/50",
+    socials: [
+      { platform: "instagram", url: "https://www.instagram.com/dbsfoundationid/" },
+      { platform: "tiktok", url: "https://www.tiktok.com/@dicoding" }
+    ]
+  },
+  {
+    id: 9,
+    category: "Program",
+    period: "2025 (6 Bulan)",
+    title: "AI Code Generation & Optimization",
+    subtitle: "IBM Skills Build Bootcamp",
+    description: "Mempelajari pemrograman yang berfokus pada generasi kode (code generation) dan optimalisasi memanfaatkan teknologi kecerdasan buatan.",
+    icon: "memory",
+    color: "text-blue-500",
+    border: "border-l-blue-500/50",
+    socials: [
+      { platform: "instagram", url: "https://www.instagram.com/ibm/" },
+      { platform: "tiktok", url: "https://www.tiktok.com/@ibm" }
+    ]
+  },
+  {
+    id: 10,
+    category: "Program",
+    period: "2025 (6 Bulan)",
+    title: "IoT, AI & Complex Coding",
+    subtitle: "SIC7 DIBIMBING",
+    description: "Program bootcamp intensif mempelajari Internet of Things (IoT), teknologi AI, dan penyelesaian masalah melalui pemrograman kompleks.",
+    icon: "router",
+    color: "text-emerald-500",
+    border: "border-l-emerald-500/50",
+    socials: [
+      { platform: "instagram", url: "https://www.instagram.com/dibimbing/" },
+      { platform: "tiktok", url: "https://www.tiktok.com/@dibimbing" }
+    ]
+  },
+  {
+    id: 11,
+    category: "Program",
+    period: "2026 (4 Hari)",
+    title: "AI Productivity & API Integration",
+    subtitle: "HACKTIV8 Maju Bareng AI",
+    description: "Membahas AI Productivity dan integrasi API AI untuk developer. Praktik langsung (hands-on) pengembangan AI dan pembuatan proyek chatbot.",
+    icon: "smart_toy",
+    color: "text-purple-500",
+    border: "border-l-purple-500/50",
+    socials: [
+      { platform: "instagram", url: "https://www.instagram.com/hacktiv8id/" },
+      { platform: "tiktok", url: "https://www.tiktok.com/@hacktiv8id" }
+    ]
   },
   {
     id: 2,
