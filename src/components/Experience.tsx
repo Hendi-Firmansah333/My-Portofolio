@@ -41,7 +41,7 @@ const experiences = [
     id: 9,
     category: "Program",
     period: "2025 (6 Bulan)",
-    title: "AI Code Generation & Optimization",
+    title: "AI Code Generation",
     subtitle: "IBM Skills Build Bootcamp",
     description: "Mempelajari pemrograman yang berfokus pada generasi kode (code generation) dan optimalisasi memanfaatkan teknologi kecerdasan buatan.",
     icon: "memory",
