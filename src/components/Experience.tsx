@@ -32,13 +32,32 @@ const experiences = [
   {
     id: 3,
     category: "Organisasi",
-    period: "2023 — Present",
-    title: "Tim Humas & ASTECH Polinela",
-    subtitle: "Web Developer / Member",
-    description: "Actively involved in campus organizations. Developed platforms like PRIMA (Humas App) and ASTECH Organization Profile to streamline digital management.",
+    period: "2024 — Present",
+    title: "Ketua Departemen Minat Bakat",
+    subtitle: "HMJTI Politeknik Negeri Lampung",
+    description: "Organisasi yang menaungi program studi dari jurusan Teknologi Informasi Politeknik Negeri Lampung. Bertanggung jawab memimpin departemen dalam mengembangkan potensi dan bakat mahasiswa.",
     icon: "groups",
     color: "text-emerald-400",
-    border: "border-l-emerald-400/50"
+    border: "border-l-emerald-400/50",
+    socials: [
+      { platform: "instagram", url: "https://www.instagram.com/hmjtipolinela/" },
+      { platform: "tiktok", url: "https://www.tiktok.com/@hmjti.polinela" }
+    ]
+  },
+  {
+    id: 7,
+    category: "Organisasi",
+    period: "2024 — Present",
+    title: "Wakadiv Minat Bakat",
+    subtitle: "ASTECH Politeknik Negeri Lampung",
+    description: "Organisasi hima prodi yang bergerak untuk pengembangan program studi TRPL Politeknik Negeri Lampung. Berfokus pada inovasi dan kolaborasi minat bakat mahasiswa.",
+    icon: "local_fire_department",
+    color: "text-orange-400",
+    border: "border-l-orange-400/50",
+    socials: [
+      { platform: "instagram", url: "https://www.instagram.com/astech.polinela/" },
+      { platform: "tiktok", url: "https://www.tiktok.com/@astech.polinela" }
+    ]
   },
   {
     id: 6,
