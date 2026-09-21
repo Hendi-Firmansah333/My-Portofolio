@@ -355,7 +355,7 @@ function Band({
         </RigidBody>
       </group>
       <mesh ref={band} frustumCulled={false} raycast={() => null}>
-        <meshLineGeometry />
+        <meshLineGeometry points={curve.getPoints(32)} />
         {/* @ts-ignore */}
         <meshLineMaterial
           color="white"
