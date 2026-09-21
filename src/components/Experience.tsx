@@ -91,7 +91,11 @@ const experiences = [
     description: "Currently pursuing a degree with a strong focus on software engineering, frontend development, and modern web technologies.",
     icon: "school",
     color: "text-blue-400",
-    border: "border-l-blue-400/50"
+    border: "border-l-blue-400/50",
+    socials: [
+      { platform: "instagram", url: "https://www.instagram.com/polinela.official/" },
+      { platform: "tiktok", url: "https://www.tiktok.com/@polinela.official" }
+    ]
   },
   {
     id: 3,
