@@ -66,7 +66,8 @@ const experiences = [
     color: "text-pink-400",
     border: "border-l-pink-500/50",
     socials: [
-      { platform: "instagram", url: "https://www.instagram.com/kuy2.id/" }
+      { platform: "instagram", url: "https://www.instagram.com/kuy2.id/" },
+      { platform: "tiktok", url: "#" }
     ]
   }
 ];
