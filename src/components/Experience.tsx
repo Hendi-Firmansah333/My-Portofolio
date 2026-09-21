@@ -41,6 +41,21 @@ const experiences = [
     border: "border-l-emerald-400/50"
   },
   {
+    id: 6,
+    category: "Work",
+    period: "2026 — Present",
+    title: "Instruktur",
+    subtitle: "LKP Global Komputer Pringsewu",
+    description: "Mentoring and guiding students in computer fundamentals, software applications, and IT skills as a dedicated instructor.",
+    icon: "laptop_mac",
+    color: "text-amber-400",
+    border: "border-l-amber-500/50",
+    socials: [
+      { platform: "instagram", url: "https://www.instagram.com/lkpglobal/" },
+      { platform: "tiktok", url: "https://www.tiktok.com/@lkpglobal.kompute" }
+    ]
+  },
+  {
     id: 4,
     category: "Work",
     period: "2024 (3 Months)",
