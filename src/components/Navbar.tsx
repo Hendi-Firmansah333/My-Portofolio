@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+import { useLenis } from "lenis/react";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -17,6 +18,20 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const lenis = useLenis();
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("/#")) {
+      e.preventDefault();
+      const target = href.replace("/", "");
+      lenis?.scrollTo(target);
+      setIsOpen(false);
+    } else if (href === "/") {
+      e.preventDefault();
+      lenis?.scrollTo(0);
+      setIsOpen(false);
+    }
+  };
 
   return (
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50">
@@ -25,7 +40,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           
           {/* Logo Section */}
-          <Link href="/" className="flex-shrink-0 flex items-center gap-2 cursor-pointer group ml-2">
+          <Link href="/" onClick={(e) => handleScroll(e, "/")} className="flex-shrink-0 flex items-center gap-2 cursor-pointer group ml-2">
             <div className="bg-primary/20 p-2 rounded-full group-hover:bg-primary/30 transition-colors">
               <span className="material-symbols-outlined text-primary text-sm">code</span>
             </div>
@@ -40,6 +55,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
+                onClick={(e) => handleScroll(e, link.href)}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 className="relative px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-full"
@@ -106,7 +122,7 @@ export default function Navbar() {
               {navLinks.map((link) => (
                 <Link 
                   key={link.name}
-                  onClick={() => setIsOpen(false)} 
+                  onClick={(e) => handleScroll(e, link.href)} 
                   className="px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-colors" 
                   href={link.href}
                 >
