@@ -282,7 +282,20 @@ function Band({
         curve.points[3].copy(fixed.current.translation());
       }
       
-      band.current.geometry.setPoints(curve.getPoints(isMobile ? 16 : 32));
+      let linePoints = curve.getPoints(isMobile ? 16 : 32);
+      
+      // Filter out overlapping adjacent points and NaNs to prevent MeshLineGeometry crashes
+      linePoints = linePoints.filter((p, i) => {
+        if (Number.isNaN(p.x) || Number.isNaN(p.y) || Number.isNaN(p.z)) return false;
+        if (i === 0) return true;
+        return p.distanceTo(linePoints[i - 1]) > 0.001;
+      });
+
+      if (linePoints.length < 2) {
+        linePoints = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(0, 0.1, 0)];
+      }
+      
+      band.current.geometry.setPoints(linePoints);
       ang.copy(card.current.angvel());
       rot.copy(card.current.rotation());
       card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z }, true);
