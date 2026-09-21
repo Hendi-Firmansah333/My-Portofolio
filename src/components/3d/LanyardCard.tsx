@@ -273,7 +273,9 @@ function Band({
         lerped.lerp(ref.current.translation(), delta * (minSpeed + clampedDistance * (maxSpeed - minSpeed)));
       });
       // Only copy physics points if they have been initialized (prevents all zeroes on first frame)
-      if (j3.current.translation().distanceTo(fixed.current.translation()) > 0.1) {
+      vec.copy(j3.current.translation());
+      dir.copy(fixed.current.translation());
+      if (vec.distanceTo(dir) > 0.1) {
         curve.points[0].copy(j3.current.translation());
         curve.points[1].copy(getLerped(j2.current));
         curve.points[2].copy(getLerped(j1.current));
