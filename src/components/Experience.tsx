@@ -37,8 +37,8 @@ const experiences = [
     subtitle: "HMJTI Politeknik Negeri Lampung",
     description: "Organisasi yang menaungi program studi dari jurusan Teknologi Informasi Politeknik Negeri Lampung. Bertanggung jawab memimpin departemen dalam mengembangkan potensi dan bakat mahasiswa.",
     icon: "groups",
-    color: "text-emerald-400",
-    border: "border-l-emerald-400/50",
+    color: "text-orange-400",
+    border: "border-l-orange-400/50",
     socials: [
       { platform: "instagram", url: "https://www.instagram.com/hmjtipolinela/" },
       { platform: "tiktok", url: "https://www.tiktok.com/@hmjti.polinela" }
@@ -52,8 +52,8 @@ const experiences = [
     subtitle: "ASTECH Politeknik Negeri Lampung",
     description: "Organisasi hima prodi yang bergerak untuk pengembangan program studi TRPL Politeknik Negeri Lampung. Berfokus pada inovasi dan kolaborasi minat bakat mahasiswa.",
     icon: "local_fire_department",
-    color: "text-orange-400",
-    border: "border-l-orange-400/50",
+    color: "text-blue-400",
+    border: "border-l-blue-400/50",
     socials: [
       { platform: "instagram", url: "https://www.instagram.com/astech.polinela/" },
       { platform: "tiktok", url: "https://www.tiktok.com/@astech.polinela" }
