@@ -275,11 +275,30 @@ function Band({
       // Only copy physics points if they have been initialized (prevents all zeroes on first frame)
       vec.copy(j3.current.translation());
       dir.copy(fixed.current.translation());
+      
+      const p0 = j3.current.translation();
+      const p1 = getLerped(j2.current);
+      const p2 = getLerped(j1.current);
+      const p3 = fixed.current.translation();
+
+      // Protect against physics explosion (NaN values) when pulled too hard
+      if (Number.isNaN(p0.x) || Number.isNaN(p1.x) || Number.isNaN(p2.x) || Number.isNaN(p3.x)) {
+        if (dragged) drag(false);
+        [j1, j2, j3, card].forEach(ref => {
+          if (ref.current) {
+            ref.current.setTranslation({ x: 0, y: 2, z: 0 }, true);
+            ref.current.setLinvel({ x: 0, y: 0, z: 0 }, true);
+            ref.current.setAngvel({ x: 0, y: 0, z: 0 }, true);
+          }
+        });
+        return;
+      }
+
       if (vec.distanceTo(dir) > 0.1) {
-        curve.points[0].copy(j3.current.translation());
-        curve.points[1].copy(getLerped(j2.current));
-        curve.points[2].copy(getLerped(j1.current));
-        curve.points[3].copy(fixed.current.translation());
+        curve.points[0].copy(p0);
+        curve.points[1].copy(p1);
+        curve.points[2].copy(p2);
+        curve.points[3].copy(p3);
       }
       
       const linePoints = curve.getPoints(isMobile ? 16 : 32);
@@ -295,8 +314,12 @@ function Band({
         }
       }
 
-      if (isValid) {
-        band.current.geometry.setPoints(linePoints);
+      if (isValid && band.current) {
+        try {
+          band.current.geometry.setPoints(linePoints);
+        } catch (e) {
+          // Ignore the internal meshline error if the physics simulation spits out invalid tangents momentarily
+        }
       }
       ang.copy(card.current.angvel());
       rot.copy(card.current.rotation());

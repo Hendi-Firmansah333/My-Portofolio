@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { SiReact, SiNextdotjs, SiTailwindcss, SiTypescript, SiNodedotjs, SiThreedotjs, SiVite } from "react-icons/si";
+import { useLenis } from "lenis/react";
 
 // Dynamic import for the 3D Canvas to avoid SSR issues
 const Lanyard3D = dynamic(() => import("@/components/3d/LanyardCard"), { ssr: false });
@@ -18,17 +19,17 @@ const TypingText = ({ fullText }: { fullText: string }) => {
   useEffect(() => {
     let timeout: NodeJS.Timeout;
     
-    if (isDeleting) {
-      if (text.length > 0) {
-        timeout = setTimeout(() => setText(text.slice(0, -1)), 100);
-      } else {
-        setIsDeleting(false);
-      }
-    } else {
+    if (!isDeleting) {
       if (text.length < fullText.length) {
         timeout = setTimeout(() => setText(fullText.slice(0, text.length + 1)), 150);
       } else {
         timeout = setTimeout(() => setIsDeleting(true), 3000);
+      }
+    } else {
+      if (text.length > 0) {
+        timeout = setTimeout(() => setText(fullText.slice(0, text.length - 1)), 50);
+      } else {
+        timeout = setTimeout(() => setIsDeleting(false), 500);
       }
     }
 
@@ -39,8 +40,10 @@ const TypingText = ({ fullText }: { fullText: string }) => {
 };
 
 export default function Hero() {
+  const lenis = useLenis();
+
   return (
-    <section className="relative h-screen flex items-center pt-20 lg:pt-24 overflow-hidden bg-[#050505]">
+    <section className="relative min-h-[100svh] flex flex-col lg:flex-row items-center justify-center overflow-hidden bg-[#050505] pt-8 lg:pt-0">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[800px] md:h-[800px] bg-primary/20 rounded-full blur-[100px] opacity-60 pointer-events-none"></div>
 
@@ -54,12 +57,12 @@ export default function Hero() {
         />
       </div>
 
-      {/* Lanyard 3D Interactive Centerpiece (Absolute Full Height Right Side) */}
+      {/* Lanyard 3D Interactive Centerpiece */}
       <motion.div 
-        initial={{ opacity: 0, scale: 0.8 }}
+        initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-        className="absolute top-0 right-0 h-screen w-full lg:w-[45%] opacity-40 lg:opacity-100 z-0 lg:z-20 pointer-events-none lg:pointer-events-auto translate-x-[30%] sm:translate-x-[20%] lg:translate-x-0 scale-[0.55] sm:scale-75 lg:scale-100 origin-top-right lg:origin-center"
+        className="relative lg:absolute lg:top-0 lg:right-0 w-full h-[55vh] lg:h-screen lg:w-[45%] opacity-100 z-10 lg:z-20 pointer-events-auto flex items-center justify-center scale-100 sm:scale-105 lg:scale-100 lg:origin-center mt-2 lg:mt-0"
       >
         <Lanyard3D />
       </motion.div>
@@ -68,38 +71,44 @@ export default function Hero() {
         
         {/* Sisi Kiri: Tipografi & Copywriting (High-Tech Style) */}
         <motion.div 
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col gap-4 lg:gap-5 w-full lg:w-[60%] pointer-events-auto relative z-10 p-5 sm:p-8 lg:p-0 bg-[#0f172a]/40 lg:bg-transparent backdrop-blur-md lg:backdrop-blur-none rounded-3xl lg:rounded-none border border-white/10 lg:border-transparent shadow-2xl lg:shadow-none"
+          className="flex flex-col items-center text-center lg:items-start lg:text-left gap-3 lg:gap-5 w-full lg:w-[60%] pointer-events-auto relative z-50 lg:mt-16"
         >
 
-          <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-white leading-[1.05] tracking-tighter drop-shadow-sm">
-            Frontend <br className="hidden md:block" />
-            <span className="text-5xl md:text-6xl lg:text-[5.5rem] text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-primary animate-text-shimmer bg-[length:200%_auto]">
+          <h1 className="text-[2rem] leading-tight sm:text-5xl lg:text-[4rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-white tracking-tighter drop-shadow-sm">
+            Frontend <br className="hidden lg:block" />
+            <span className="text-4xl sm:text-6xl lg:text-[5.5rem] text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-400 to-primary animate-text-shimmer bg-[length:200%_auto]">
               <TypingText fullText="Developer." />
             </span>
             <motion.span 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ repeat: Infinity, duration: 0.8, repeatType: "reverse" }}
-              className="inline-block text-cyan-400 ml-1 text-5xl md:text-6xl lg:text-[5.5rem]"
+              className="inline-block text-cyan-400 ml-1 text-4xl sm:text-6xl lg:text-[5.5rem]"
               style={{ WebkitTextFillColor: '#22d3ee' }}
             >
               |
             </motion.span>
           </h1>
 
-          <p className="text-slate-400 text-base md:text-lg max-w-2xl leading-relaxed font-light mt-0 lg:-mt-2">
-            A passionate <strong className="text-slate-200">Frontend Developer</strong> dedicated to crafting immersive digital experiences. I specialize in building interactive <strong className="text-slate-200">UI</strong> and modern web applications, bringing concepts to life with elegant code and seamless performance.
+          <p className="text-slate-400 text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed font-light mt-1 lg:-mt-2 mx-auto lg:mx-0 px-2 lg:px-0 relative z-50">
+            A passionate <strong className="text-slate-200">Frontend Developer</strong> dedicated to crafting immersive digital experiences. I specialize in building interactive <strong className="text-slate-200">UI</strong> and modern web applications.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mt-4">
-            <Link href="/#work" passHref>
+          <div className="flex flex-row justify-center lg:justify-start gap-3 sm:gap-4 mt-4 w-full relative z-50">
+            <Link href="/#portfolio" passHref>
               <motion.button 
+                onClick={(e: React.MouseEvent) => {
+                  if (lenis) {
+                    e.preventDefault();
+                    lenis.scrollTo("#portfolio");
+                  }
+                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-primary to-cyan-600 text-white rounded-full font-bold shadow-[0_0_20px_rgba(19,91,236,0.5)] hover:shadow-[0_0_30px_rgba(19,91,236,0.8)] transition-shadow flex items-center justify-center gap-2"
+                className="w-auto px-5 sm:px-8 py-3 lg:px-8 lg:py-4 bg-gradient-to-r from-primary to-cyan-600 text-white rounded-full font-bold shadow-[0_0_20px_rgba(19,91,236,0.5)] hover:shadow-[0_0_30px_rgba(19,91,236,0.8)] transition-shadow flex items-center justify-center gap-2 text-sm lg:text-base cursor-pointer"
               >
                 Explore Works
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -107,45 +116,55 @@ export default function Hero() {
             </Link>
             
             <Link href="/#contact" passHref>
-              <SpecularButton
-                className="w-full sm:w-auto px-8 h-[56px] text-white rounded-full font-medium"
-                radius={28}
-                baseColor="#1e293b"
-                lineColor="#22d3ee"
-                intensity={1.2}
-                speed={0.5}
-                textColor="#ffffff"
-                shineSize={15}
+              <div 
+                className="w-auto cursor-pointer"
+                onClick={(e: React.MouseEvent) => {
+                  if (lenis) {
+                    e.preventDefault();
+                    lenis.scrollTo("#contact");
+                  }
+                }}
               >
-                Contact Me
-              </SpecularButton>
+                <SpecularButton
+                  className="w-auto px-5 sm:px-8 h-[48px] lg:h-[56px] text-white rounded-full font-medium text-sm lg:text-base"
+                  radius={28}
+                  baseColor="#1e293b"
+                  lineColor="#22d3ee"
+                  intensity={1.2}
+                  speed={0.5}
+                  textColor="#ffffff"
+                  shineSize={15}
+                >
+                  Contact Me
+                </SpecularButton>
+              </div>
             </Link>
           </div>
 
           {/* Tech Stack Marquee (Running Logos) */}
-          <div className="mt-4 overflow-hidden w-full max-w-md relative [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
+          <div className="mt-6 overflow-hidden w-full max-w-xs sm:max-w-md relative [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)] mx-auto lg:mx-0">
             <motion.div 
               className="flex gap-6 items-center w-max"
               animate={{ x: ["0%", "-50%"] }}
               transition={{ repeat: Infinity, ease: "linear", duration: 15 }}
             >
               {/* First Set */}
-              <SiReact className="text-2xl text-slate-500 hover:text-[#61DAFB] transition-colors cursor-pointer" />
-              <SiNextdotjs className="text-2xl text-slate-500 hover:text-white transition-colors cursor-pointer" />
-              <SiTypescript className="text-2xl text-slate-500 hover:text-[#3178C6] transition-colors cursor-pointer" />
-              <SiTailwindcss className="text-2xl text-slate-500 hover:text-[#06B6D4] transition-colors cursor-pointer" />
-              <SiNodedotjs className="text-2xl text-slate-500 hover:text-[#339933] transition-colors cursor-pointer" />
-              <SiThreedotjs className="text-2xl text-slate-500 hover:text-white transition-colors cursor-pointer" />
-              <SiVite className="text-2xl text-slate-500 hover:text-[#646CFF] transition-colors cursor-pointer" />
+              <SiReact className="text-xl lg:text-2xl text-slate-500 hover:text-[#61DAFB] transition-colors cursor-pointer" />
+              <SiNextdotjs className="text-xl lg:text-2xl text-slate-500 hover:text-white transition-colors cursor-pointer" />
+              <SiTypescript className="text-xl lg:text-2xl text-slate-500 hover:text-[#3178C6] transition-colors cursor-pointer" />
+              <SiTailwindcss className="text-xl lg:text-2xl text-slate-500 hover:text-[#06B6D4] transition-colors cursor-pointer" />
+              <SiNodedotjs className="text-xl lg:text-2xl text-slate-500 hover:text-[#339933] transition-colors cursor-pointer" />
+              <SiThreedotjs className="text-xl lg:text-2xl text-slate-500 hover:text-white transition-colors cursor-pointer" />
+              <SiVite className="text-xl lg:text-2xl text-slate-500 hover:text-[#646CFF] transition-colors cursor-pointer" />
               
               {/* Duplicated for infinite scroll */}
-              <SiReact className="text-2xl text-slate-500 hover:text-[#61DAFB] transition-colors cursor-pointer" />
-              <SiNextdotjs className="text-2xl text-slate-500 hover:text-white transition-colors cursor-pointer" />
-              <SiTypescript className="text-2xl text-slate-500 hover:text-[#3178C6] transition-colors cursor-pointer" />
-              <SiTailwindcss className="text-2xl text-slate-500 hover:text-[#06B6D4] transition-colors cursor-pointer" />
-              <SiNodedotjs className="text-2xl text-slate-500 hover:text-[#339933] transition-colors cursor-pointer" />
-              <SiThreedotjs className="text-2xl text-slate-500 hover:text-white transition-colors cursor-pointer" />
-              <SiVite className="text-2xl text-slate-500 hover:text-[#646CFF] transition-colors cursor-pointer" />
+              <SiReact className="text-xl lg:text-2xl text-slate-500 hover:text-[#61DAFB] transition-colors cursor-pointer" />
+              <SiNextdotjs className="text-xl lg:text-2xl text-slate-500 hover:text-white transition-colors cursor-pointer" />
+              <SiTypescript className="text-xl lg:text-2xl text-slate-500 hover:text-[#3178C6] transition-colors cursor-pointer" />
+              <SiTailwindcss className="text-xl lg:text-2xl text-slate-500 hover:text-[#06B6D4] transition-colors cursor-pointer" />
+              <SiNodedotjs className="text-xl lg:text-2xl text-slate-500 hover:text-[#339933] transition-colors cursor-pointer" />
+              <SiThreedotjs className="text-xl lg:text-2xl text-slate-500 hover:text-white transition-colors cursor-pointer" />
+              <SiVite className="text-xl lg:text-2xl text-slate-500 hover:text-[#646CFF] transition-colors cursor-pointer" />
             </motion.div>
           </div>
         </motion.div>
